@@ -1,0 +1,99 @@
+<!DOCTYPE html> <html class=no-js> <head> <meta charset=utf-8> <title>MAZHR</title> <meta name=description content=""> <meta name=viewport content="width=1050"> <link rel="shortcut icon" href=../1adab734.favicon.ico> <link rel=stylesheet href="../bower_components/font-awesome/css/font-awesome.css"> <link rel=stylesheet href="../bower_components/normalize.css/normalize.css"> <link href="//fonts.googleapis.com/css?family=Raleway:400,700|Roboto:500,400,300" rel=stylesheet type=text/css> <link rel=stylesheet href=../styles/71d463c8.main.css> <script src=../bower_components/modernizr/modernizr.js></script> <style>#loader .text {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+        margin-top: 220px;
+      }</style>  <body> <div id=loader> <img class="border rotating" src="../images/1979fdf4.logo_border.svg"> <img class=border src="../images/34293c5e.logo_center.svg"> <div class=text></div> </div> <script src=../bower_components/jquery/dist/jquery.js></script> <script>var config = {
+        backendUrl: '//api.mazhr.com',
+        datastore: 'mahzr_app_v1_settings'
+      };
+
+      //Load stuff from localStorage
+      function loadData(key){
+        'use strict';
+        if (localStorage !== undefined) {
+          //log('Loading ['+key+'] from localStorage');
+          if (localStorage.getItem(key) === null) {
+            return null;
+          }
+          return JSON.parse(localStorage.getItem(key));
+        } else {
+          //log('ERROR: localStorage NOT DEFINED!');
+          return null;
+        }
+      }
+
+      //Get current url, do not include hashtags or parameters
+      function getCurrentUrl(){
+        'use strict';
+        var url = window.location.href;
+        if(url.indexOf('?') !== -1){
+          url = url.substr(0, url.indexOf('?'));
+        }
+        if(url.indexOf('#') !== -1){
+          url = url.substr(0, url.indexOf('#'));
+        }
+        return url;
+      }
+
+      //Load settings
+      var settings = loadData(config.datastore);
+      if(settings === null){
+        settings = {
+          language: 'fi_fi'
+        };
+      }
+
+      // "App"
+      var a = {
+        translations: {}
+      }
+
+      a.loadTranslation = function(locale, filename){
+        var dfd = new $.Deferred();
+        $.get(filename, function(data){
+          if(data !== undefined) {
+            //log('Loaded translations for '+locale+' from '+filename);
+            a.translations[locale] = data;
+            dfd.resolve('OK');
+          }
+        }, 'json');
+        return dfd.promise();
+      };
+
+      //Get url parameters
+      var urlParams;
+
+      (window.onpopstate = function(){
+          var match,
+            pl     = /\+/g,  // Regex for replacing addition symbol with a space
+            search = /([^&=]+)=?([^&]*)/g,
+            decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+            query  = window.location.search.substring(1);
+
+          urlParams = {};
+
+          while (match = search.exec(query)) {
+            urlParams[decode(match[1])] = decode(match[2]);
+          }
+
+      })();
+
+      if(settings.tempToken !== undefined){
+        urlParams.mazhr_token = settings.tempToken;
+      }
+
+      //Forward get as ajax
+      $.get(config.backendUrl+'/test/result', urlParams, function(){
+        window.location.href = getCurrentUrl()+'../#tests';
+      });
+
+      //Show loading text after loading the translations
+      $.when(
+        a.loadTranslation('fi_fi', '../languages/finnish.json'),
+        a.loadTranslation('en_en', '../languages/english.json'),
+        a.loadTranslation('sv_se', '../languages/swedish.json')
+      ).then(function(){
+        $('#loader .text').hide().html(a.translations[settings.language].test_processing);
+        $('#loader .text').delay(2000).fadeIn(600);
+      });</script>  

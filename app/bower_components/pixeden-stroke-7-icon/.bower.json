@@ -1,0 +1,33 @@
+{
+  "name": "pixeden-stroke-7-icon",
+  "authors": [
+    "pixeden.com"
+  ],
+  "keywords": [
+    "icon",
+    "icon",
+    "font",
+    "thin",
+    "vector",
+    "retina",
+    "stroke"
+  ],
+  "homepage": "http://www.pixeden.com/icon-fonts/stroke-7-icon-font-set",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "4258d521b9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "4258d521b9c78cafad74cda84173cbde8517c312"
+  },
+  "_source": "git://github.com/olimsaidov/pixeden-stroke-7-icon.git",
+  "_target": "*",
+  "_originalSource": "pixeden-stroke-7-icon",
+  "_direct": true
+}

@@ -1,0 +1,26 @@
+- hosts: all
+  remote_user: vagrant
+  sudo: true
+  vars:
+    app_name: admin.mazhr.com
+    app_path: /vagrant
+
+  tasks:
+      - name: yum update all packages
+        yum: pkg=* state=latest
+
+      - name: install required packages with yum.
+        yum: pkg={{ item }} state=installed
+        with_items:
+          - man
+          - httpd
+
+      - name: copy httpd configuration
+        template:
+          src: templates/app.conf
+          dest: "/etc/httpd/conf.d/{{ app.name }}.conf"
+          owner: root
+          group: root
+          mode: 0755
+
+      - service: name=httpd state=restarted enabled=yes
