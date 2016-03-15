@@ -1,0 +1,34 @@
+
+aws_access_key_id: "{{ vault_aws_access_key_id }}"
+aws_secret_access_key: "{{ vault_aws_secret_access_key }}"
+
+app_environment: development
+app_owner: vagrant
+app_path: /home/vagrant/sync
+
+database_host: "localhost"
+database_type: pgsql
+database_port: 5432
+database_name: "lambda_scan"
+database_user: "{{ app_owner }}"
+database_password: ~
+
+app_domain: lambdascan.dev
+
+memcache_host: 127.0.0.1
+memcahce_port: 11211
+
+app_admin:
+  name: admin
+  domain_name: admin.mazhr.dev
+  index_file: index.html
+
+app_site:
+  name: site
+  domain_name: mazhr.dev
+  index_file: index.php
+
+app_mazhr:
+  name: app
+  domain_name: app.mazhr.dev
+  index_file: index.html
