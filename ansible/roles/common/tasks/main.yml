@@ -1,0 +1,5 @@
+---
+- name: Update distribution
+  yum: name=* state=latest update_cache=yes
+
+

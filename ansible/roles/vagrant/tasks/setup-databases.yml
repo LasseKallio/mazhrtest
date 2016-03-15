@@ -1,0 +1,17 @@
+- postgresql_user: name=vagrant password=NULL role_attr_flags=SUPERUSER
+
+- name: Create databases
+  postgresql_db:  name={{item.name}} owner={{item.owner}}
+                  encoding='UTF-8'
+                  lc_collate='fi_FI.UTF-8'
+                  lc_ctype='fi_FI.UTF-8'
+                  template='template0'
+  with_items:
+    - { name: "{{ database_name }}", owner: "{{ app_owner }}" }
+    - { name: "{{ database_name }}_test", owner: "{{ app_owner }}" }
+
+- name: Set development data
+  become_user: postgres
+  shell: psql {{item.database }} < {{ item.schema }}
+  with_items:
+    - { database: "{{ database_name }}", schema: /vagrant/install/database/dev-data.dump }

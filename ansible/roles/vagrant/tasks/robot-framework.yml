@@ -1,0 +1,19 @@
+- name: Install Robot Framework dependencies
+  yum: pkg={{ item }} state=installed
+  with_items:
+      - freetype
+      - fontconfig
+      - python-pip
+      - nodejs
+      - npm
+
+- name: install Phantomjs
+  npm: name=phantomjs global=yes
+
+- name: install robotframework
+  pip: name={{ item }}
+  with_items:
+      - robotframework
+      - robotframework-selenium2library
+      - robotframework-databaselibrary
+

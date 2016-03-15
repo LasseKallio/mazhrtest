@@ -1,0 +1,17 @@
+- name: Download Composer installer
+  get_url:
+    url: https://getcomposer.org/installer
+    dest: /tmp/composer-installer.php
+  tags: composer
+
+- name: Install composer
+  shell: php /tmp/composer-installer.php --install-dir=/usr/local/bin/ --filename=composer creates=/usr/local/bin/composer
+  tags: composer
+
+- name: Make composer executable
+  file: path=/usr/local/bin/composer owner=vagrant group=vagrant mode=0550 state=file
+  tags: composer
+
+- name: Compose project
+  shell: cd /vagrant/; php /usr/local/bin/composer install creates=/vagrant/autoload.php
+  tags: composer

@@ -1,0 +1,7 @@
+---
+- name: install dependencies
+  yum: pkg=httpd state=installed
+  notify: restart httpd
+
+- name: enamble httpd
+  service: name=httpd state=started enabled=yes

@@ -1,0 +1,15 @@
+---
+#####################
+# Setup php.ini
+#####################
+
+- name: Configure php.ini
+  lineinfile: dest=/etc/php.ini line="{{ item.line }}" state={{ item.state }}
+  with_items:
+    - { line: 'error_log = syslog', state: 'present'}
+    - { line: 'session.save_handler = files', state: 'absent'}
+    - { line: 'session.save_handler = memcached', state: 'present'}
+    - { line: 'session.save_path = "127.0.0.1:11211"', state: 'present'} #TODO: Configure this somewhere else
+    - { line: 'date.timezone = Europe/Helsinki', state: 'present'}
+  notify: restart httpd
+  tags: php

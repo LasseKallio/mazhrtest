@@ -1,0 +1,9 @@
+---
+
+- include: webserver.yml
+
+#####################
+# Setup Applications
+#####################
+- name: Configure apache for application(s)
+  include: configure.yml

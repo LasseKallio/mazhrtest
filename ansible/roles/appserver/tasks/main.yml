@@ -1,0 +1,22 @@
+---
+- include: create-users.yml
+  name: Create users needed by application(s)
+
+- include: install-packages.yml
+  name: Install packages
+
+- include: php-ini.yml
+  name: Setup php configuration
+
+- name: Setup directories
+  file:
+    src: "{{ app_path }}/source/{{ item.name }}"
+    dest: "/var/www/html/{{ item.name }}"
+    state: link
+    owner: "{{ app_owner }}"
+    group: apache
+  with_items:
+    - "{{ app_admin }}"
+
+- include: configure-httpd.yml
+  name: Setup Apache configuration(s)

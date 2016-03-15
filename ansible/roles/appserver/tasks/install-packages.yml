@@ -1,0 +1,19 @@
+---
+- name: Install PHP repositories
+  yum: pkg={{ item }} state=present
+  with_items:
+    - https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+    - https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+
+- name: install PHP dependencies
+  yum: pkg={{ item }} state=installed update_cache=yes
+  with_items:
+      - php55w
+      - php55w-opcache
+      - php55w-mbstring
+      - php55w-pdo
+      - php55w-mysql
+      - php55w-pecl-memcached
+      - php55w-mcrypt
+  notify:
+    - restart httpd

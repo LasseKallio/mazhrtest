@@ -1,0 +1,13 @@
+---
+########################################
+# Remove Apaches default configuration
+########################################
+
+- name: Remove Apaches default configurations
+  file: path={{item}} state=absent
+  with_items:
+    - /etc/httpd/conf.d/userdir.conf
+    - /etc/httpd/conf.d/welcome.conf
+    - /etc/httpd/conf.d/autoindex.conf
+  notify: restart httpd
+

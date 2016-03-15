@@ -1,0 +1,4 @@
+---
+
+- name: Create app owner
+  user: name={{ app_owner }} state=present system=yes

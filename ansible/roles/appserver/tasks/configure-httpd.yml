@@ -1,0 +1,20 @@
+---
+########################################
+# Setup apache's configuration for application
+########################################
+
+- debug:
+    msg: "{{ app_admin }}"
+
+- name: Configure applications
+  template:
+    src: static-content.conf
+    dest: "/etc/httpd/conf.d/{{ item.name }}.conf"
+    owner: root
+    group: root
+    mode: 0755
+  notify: restart httpd
+  with_items:
+    - "{{ app_admin }}"
+
+

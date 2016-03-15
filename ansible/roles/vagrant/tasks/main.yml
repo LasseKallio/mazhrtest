@@ -1,0 +1,24 @@
+---
+
+- name: disable selinux
+  shell: setenforce 0
+
+- name: copy configuration(s)
+  template: src=templates{{item.file}} dest={{item.file}} owner={{item.owner}} group={{item.group}} mode={{item.mode}}
+  with_items:
+    - { file: /etc/hosts, owner: root, group: root, mode: '0644' }
+
+- name: Make sync-folder readable to apache
+  file: path={{item}} owner=vagrant group=vagrant mode=0701 state=directory
+  with_items:
+    - /home/vagrant
+    - /home/vagrant/sync
+
+#- include: composer.yml
+#  name: Setup & compose project
+
+- name: set vagrant ssh defaulting to /vagrant dir
+  lineinfile: dest=/home/vagrant/.bashrc line="cd /home/vagrant/sync"
+
+#- name: Setup databases
+#  include: setup-databases.yml
