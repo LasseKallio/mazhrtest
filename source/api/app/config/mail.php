@@ -15,7 +15,8 @@ return array(
 	|
 	*/
 
-	'driver' => 'mandrill',
+	//'driver' => 'mandrill',
+	'driver' => 'log',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -119,6 +120,6 @@ return array(
 	|
 	*/
 
-	'pretend' => false,
+	'pretend' => true,
 
 );

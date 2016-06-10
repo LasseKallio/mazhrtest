@@ -1,0 +1,1428 @@
+{
+    "test_processing": "Tulostasi käsitellään. <br>Odota hetki.",
+    "public_title": "Uusi palvelu työnhakuun ja urasuunnitteluun",
+    "tests_left": "Tekemättömiä testejä",
+    "moment_lang": "fi",
+
+    "date_year_single": "vuosi",
+    "date_years": "vuotta",
+    "date_month_single": "kuukausi",
+    "date_months": "kuukautta",
+
+    "education_levels": {
+        "7": "Ylempi korkeakoulututkinto",
+        "6": "Ylempi ammattikorkeakoulututkinto",
+        "5": "Alempi korkeakoulututkinto",
+        "4": "Alempi Ammattikorkeakoulututkinto",
+        "3": "Ylioppilastutkinto",
+        "2": "Ammattitutkinto",
+        "1": "Peruskoulu"
+    },
+
+    "education_history_levels": [
+        {
+            "title": "Korkeakoulututkinnot",
+            "list": [
+                { "id": "101", "name": "Eläinlääketieteen ala" },
+                { "id": "102", "name": "Farmasian ala" },
+                { "id": "103", "name": "Hammaslääketieteen ala" },
+                { "id": "104", "name": "Humanistinen ala" },
+                { "id": "105", "name": "Kasvatustieteellinen ala" },
+                { "id": "106", "name": "Kauppatieteellinen ala" },
+                { "id": "107", "name": "Kuvataiteen ala" },
+                { "id": "108", "name": "Liikuntatieteellinen ala" },
+                { "id": "109", "name": "Luonnontieteellinen ala" },
+                { "id": "110", "name": "Lääketieteellinen ala" },
+                { "id": "111", "name": "Maataloustieteellinen ala" },
+                { "id": "112", "name": "Musiikin ala" },
+                { "id": "113", "name": "Oikeustieteellinen ala" },
+                { "id": "114", "name": "Psykologian ala" },
+                { "id": "115", "name": "Taideteollinen ala" },
+                { "id": "116", "name": "Tanssiala" },
+                { "id": "117", "name": "Teknistieteellinen ala" },
+                { "id": "118", "name": "Teologian ala" },
+                { "id": "119", "name": "Yhteiskuntatieteellinen ala" }
+            ]
+        },
+        {
+            "title": "Ammattikorkeakoulututkinnot",
+            "list": [
+                { "id": "201", "name": "Humanistinen ja kasvatusala" },
+                { "id": "202", "name": "Kulttuuriala" },
+                { "id": "203", "name": "Luonnonvara- ja ympäristöala" },
+                { "id": "204", "name": "Matkailu-, ravitsemus ja talousala" },
+                { "id": "205", "name": "Sosiaali-, terveys-, ja liikunta-ala" },
+                { "id": "206", "name": "Tekniikan ja liikenteen ala" },
+                { "id": "207", "name": "Yhteiskuntatieteiden, liiketalouden ja hallinon ala" }
+            ]
+        },
+        {
+            "title": "Ammattitutkinnot",
+            "list": [
+                { "id": "301", "name": "Perusammattitutkinto" },
+                { "id": "302", "name": "Ammattitutkinto" },
+                { "id": "303", "name": "Erikoisammattitutkinto" }
+            ]
+        },
+        {
+            "title": "Muut tutkinnot",
+            "list": [
+                { "id": "404", "name": "Muu tutkinto" }
+            ]
+        }
+    ],
+
+    "alerts": {
+        "unsaved": "Sivulla saattaa olla tallentamattomia muutoksia. Jos jatkat, tallentamattomat muutokset menetetään.",
+        "ok": "OK",
+        "cancel": "Peruuta",
+        "messages": {
+            "profileid_error": {
+                "title": "Profiilia ei voida näyttää",
+                "message": "Profiili ei ole julkinen tai osoite on virheellinen.",
+                "type": "error"
+            },
+            "email_in_use": {
+                "title": "Sähköposti on käytössä",
+                "message": "Syöttämäsi sähköpostiosoite on jo käytössä. Valitse toinen sähköpostiosoite.",
+                "type": "error"
+            },
+            "forgot_success": {
+                "title": "Uusi salasana lähetetty",
+                "message": "Tarkista sähköpostisi.",
+                "type": "success"
+            },
+            "uploader_oldbrowser": {
+                "title": "Profiilikuvaa ei voida vaihtaa",
+                "message": "Valitettavasti selaimesi ei tue kuvan lähetystä. Voit vaihtaa profiilikuvasti uudemmalla selainversiolla.",
+                "type": "warning"
+            },
+            "uploader_image_error": {
+                "title": "Kuvan lukeminen epäonnistui",
+                "message": "",
+                "type": "warning"
+            },
+            "uploader_save_error": {
+                "title": "Kuvan tallentaminen epäonnistui",
+                "message": "Syöttämissäsi tiedoissa on virhe. Korjaa virheelliset kentät ja yritä uudelleen.",
+                "type": "warning"
+            },
+            "password_incorrect": {
+                "title": "Salasana on virheellinen",
+                "message": "Syöttämiesi salasanojen on täsmättävä sekä sen on oltava vähintään 6 merkkiä pitkä.",
+                "type": "error"
+            },
+            "password_error": {
+                "title": "Salasanan talletus epäonnistui",
+                "message": "Syöttämiesi salasanojen on täsmättävä sekä sen on oltava vähintään 6 merkkiä pitkä.",
+                "type": "error"
+            },
+            "password_success": {
+                "title": "Salasanan tallennus onnistui",
+                "message": "Voit nyt käyttää uutta salasanaasi kirjautumiseen.",
+                "type": "success"
+            },
+            "privacy_error": {
+                "title": "Yksityisyysasetuksien talletus epäonnistui",
+                "message": "Yksityisyysasetuksien tallennuksessa tapahtui virhe. Yritä myöhemmin uudelleen.",
+                "type": "error"
+            },
+            "privacy_success": {
+                "title": "Yksityisyysasetuksien tallennus onnistui",
+                "message": "Asettamasi yksityisyysasetukset ovat nyt tallennettu.",
+                "type": "success"
+            },
+            "email_incorrect": {
+                "title": "Sähköposti on virheellinen",
+                "message": "Syöttämäsi sähköpostiosoite on virheellinen.",
+                "type": "error"
+            },
+            "email_error": {
+                "title": "Sähköpostin talletus epäonnistui",
+                "message": "Syöttämääsi sähköpostiosoitettua ei saatu tallennettua. Yritä myöhemmin uudelleen.",
+                "type": "error"
+            },
+            "email_success": {
+                "title": "Sähköpostin tallennus onnistui",
+                "message": "Voit nyt käyttää uutta sähköpostiosoitettasi kirjautumiseen.",
+                "type": "success"
+            },
+            "remove_error": {
+                "title": "Virhe tilin poistossa",
+                "message": "Tilin poistossa tapahtui virhe. Yritä myöhemmin uudelleen.",
+                "type": "error"
+            },
+            "remove_success": {
+                "title": "Tili poistettu",
+                "message": "Tilisi on nyt poistettu. Luo uusi tili kirjautuaksesi palveluun uudelleen.",
+                "type": "success"
+            },
+            "profile_data_not_valid": {
+                "title": "Tarkista syöttämäsi tiedot",
+                "message": "Syöttämissäsi tiedoissa on virhe. Korjaa virheelliset kentät ja yritä uudelleen.",
+                "type": "warning"
+            },
+            "profile_data_saved": {
+                "title": "Tiedot tallennettu",
+                "message": "Syöttämäsi tiedot on tallennettu onnistuneesti.",
+                "type": "success"
+            },
+            "profile_data_save_fail": {
+                "title": "Tapahtui virhe",
+                "message": "Syöttämiäsi tietoja ei saatu tallennettua. Yritä uudelleen.",
+                "type": "error"
+            },
+            "profile_leave_confirm": {
+                "title": "Oletko varma?",
+                "message": "Sivulla saattaa olla tallentamattomia muutoksia. Jos jatkat, tallentamattomat muutokset menetetään.",
+                "button_ok": "Jatka tallentamatta",
+                "button_cancel": "Peruuta",
+                "type": "warning"
+            },
+            "profile_delete_confirm_1": {
+                "title": "Poistetaanko tili?",
+                "message": "Oletko varma? Tiliä ei voida palauttaa.",
+                "button_ok": "Poista tili",
+                "button_cancel": "Peruuta",
+                "type": "warning"
+            },
+            "profile_delete_confirm_2": {
+                "title": "Poistetaanko tili?",
+                "message": "Haluatko varmasti poistaa tilin?<br><br><b>Kaikki palveluun syöttämäsi tiedot menetetään pysyvästi!</b>",
+                "button_ok": "POISTA TILI",
+                "button_cancel": "Peruuta",
+                "type": "warning"
+            },
+            "discount_code_success": {
+                "title": "Alennuskoodi hyväksytty",
+                "message": "Voit nyt tehdä testin alennettuun hintaan.",
+                "type": "success"
+            },
+            "discount_code_failed":{
+                 "title": "Alennuskoodi ei kelpaa",
+                "message":"Alennuskoodi on virheellinen tai ei enää voimassa. Tarkista koodi ja yritä uudelleen.",
+                "type": "error"
+            },
+            "test_language_not_found": {
+                "title": "Testiä ei löytynyt",
+                "message": "Valitsemaasi testiä ei valitettavasti voi suorittaa haluamallasi kielellä. Valitse toinen kieli.",
+                "type": "warning"
+            },
+            "test_reset_confirm": {
+                "title": "Oletko varma?",
+                "message": "Haluatko varmasti poistaa itsearvioinnin tuloksen? Tätä ei voida peruuttaa.",
+                "button_ok": "Poista",
+                "button_cancel": "Peruuta",
+                "type": "warning"
+            },
+            "test_done": {
+                "title": "Testi suoritettu",
+                "message": "Tuloksesi on nyt ladattavissa.",
+                "type": "success"
+            },
+            "test_done_primary": {
+                "title": "Testi suoritettu",
+                "message": "Tuloksesi on nyt ladattavissa. Etusivulla voit tutustua tuloksesi pohjalta sinulle suositeltuihin tehtäviin.",
+                "type": "success"
+            },
+            "test_reset_success":{
+                "title": "Testi poistettu",
+                "message": "Voit halutessasi tehdä testin uudelleen.",
+                "type": "success"
+            },
+            "test_resetpayment_confirm": {
+                "title": "Oletko varma?",
+                "message": "Haluatko varmasti keskeyttää maksun? Tätä ei voida peruuttaa.",
+                "button_ok": "Keskeytä maksu",
+                "button_cancel": "Peruuta",
+                "type": "warning"
+            },
+            "test_resetpayment_success":{
+                "title": "Maksu keskeytetty",
+                "message": "Voit nyt halutessasi ostaa testin uudelleen.",
+                "type": "success"
+            },
+            "login_validate_failed": {
+                "title": "Kirjautuminen epäonnistui",
+                "message": "Tarkista sähköpostiosoite ja salasana.",
+                "type": "warning"
+            },
+            "login_failed": {
+                "title": "Kirjautuminen epäonnistui",
+                "message": "Tarkista sähköpostiosoite ja salasana.",
+                "type": "error"
+            },
+            "payment_error": {
+                "title": "Maksu epäonnistui",
+                "message": "Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "payment_success": {
+                "title": "Maksu onnistui!",
+                "message": "Voit nyt suorittaa testin.",
+                "type": "success"
+            },
+            "generic_error": {
+                "title": "Odottamaton virhe",
+                "message": "Yritä hetken kuluttua uudelleen",
+                "type": "error"
+            },
+            "payment_claimed": {
+                "title": "Testi lunastettu",
+                "message": "Voit nyt suorittaa testin.",
+                "type": "success"
+            },
+            "payment_startfail": {
+                "title": "Maksu epäonnistui",
+                "message": "Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "payment_logfail": {
+                "title": "Maksu epäonnistui",
+                "message": "Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "payment_unfinished": {
+                "title": "Vahvistamaton maksusuoritus",
+                "message": "Odotamme vahvistusta pankilta. Jos keskeytit suorituksen itse niin peruuta tapahtuma.",
+                "type": "error"
+            },
+            "payment_instrumentnotfound": {
+                "title": "Maksu epäonnistui",
+                "message": "Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "payment_generalfail": {
+                "title": "Odottamaton virhe",
+                "message": "Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "payment_cancelled": {
+                "title": "Maksu peruutettu",
+                "message": "Keskeytit maksamisen.",
+                "type": "warning"
+            },
+            "test_notfound": {
+                "title": "Odottamaton virhe",
+                "message": "Testiä ei löytynyt.",
+                "type": "error"
+            },
+            "test_notpaid": {
+                "title": "Odottamaton virhe",
+                "message": "Testiä ei ole maksettu.",
+                "type": "error"
+            },
+            "test_cancel": {
+                "title": "Testi peruutettu",
+                "message": "Keskeytit testin tekemisen.",
+                "type": "warning"
+            },
+            "test_savefail": {
+                "title": "Odottamaton virhe",
+                "message": "Testin tallennus epäonnistui.",
+                "type": "error"
+            },
+            "linkedin_samemail": {
+                "title": "Sähköposti on jo olemassa",
+                "message": "LinkedIn -tiedoissasi oleva sähköpostiosoite on jo käytössä palvelussa.",
+                "type": "warning"
+            },
+            "linkedin_detailsfail": {
+                "title": "LinkedIn -haku epäonnistui",
+                "message": "LinkedIn -tietojen tuonti palveluun epäonnistui. Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "linkedin_accesstokenfail": {
+                "title": "LinkedIn -haku epäonnistui",
+                "message": "LinkedIn -tietojen haku palveluun epäonnistui. Yritä hetken kuluttua uudelleen.",
+                "type": "error"
+            },
+            "linkedin_already_linked": {
+                "title": "LinkedIn -haku epäonnistui",
+                "message": "LinkedIn -tiedot ovat jo liitetty toiseen käyttäjätiliin",
+                "type": "error"
+            }
+        }
+    },
+
+    "job": {
+        "apply": "Hae tätä paikkaa",
+        "sidebar": {
+            "title": "Tämän tehtävän sopivuus Sinulle",
+            "intro": "Yleensä tällaisessa tehtävässä arvostetaan näitä ominaisuuksia:",
+            "title_competences": "Persoonallisuuden piirteet",
+            "title_behavioral_models": "Luontainen käyttäytyminen",
+
+            "not_tested_title": "Tuo potentiaalisi esiin!",
+            "not_tested_info": "<p>Tekemällä työelämän persoonallisuutta mittaavan itsearvioinnin saat tietää työtehtävien sopivuuden Sinun persoonaasi. Mazhr kertoo Sinulle millaisia persoonallisuuden piirteitä yleensä tällaisessa tehtävässä arvostetaan.</p><p>Marzh tarjoaa Sinulle myös muita mahdollisuuksia selvittää  ja todentaa omia vahvuuksiasi, kuten erilaisten taitotestien avulla, joiden tuloksia voit harjoittelemalla myös parantaa. Saat samalla tietää, miten pärjäsit suhteessa kaikkiin testin tehneisiin.</p>",
+            "not_tested_do_test": "Aloita"
+        },
+
+        "fields": {
+            "contact": "Yhteystiedot",
+            "duration": "Työn kesto",
+            "job_published": "Ilmoitus jätetty",
+            "job_pay": "Palkkaus",
+            "job_experience": "Työkokemus",
+            "job_starts": "Työ alkaa",
+            "job_time": "Työaika",
+            "search_ends": "Haku päättyy"
+        },
+
+        "competences": {
+            "1": "Kehittää kunnianhimoisia, mutta realistisia visioita mahdollisuuksista ja konkretisoi ne toteuttamiskelpoisiksi strategioiksi",
+            "2": "Toimii oma-alotteisesti, saa asioita tapahtumaan ja ottaa vastuun tuloksista",
+            "3": "Tunnistaa ja tarttuu mahdollisuuksiin, vaikuttaa hyvin positiivisesti työyhteisönsä toimintaan",
+            "4": "Keskittyy tuloksiin; tunnistaa mahdolliset riskit ja seuraa toimintansa välittömiä vaikutuksia",
+            "5": "Tekee vaikutuksen; voittaa toiset puolelleen ja vakuuttaa heidät; ajaa suunnitelmia ja ideoita menestyksekkäästi",
+            "6": "Rakentaa hyödyllisen kontakti- ja suhdeverkoston ja käyttää sitä hyväkseen saavuttaakseen tavoitteensa.",
+            "7": "Huolehtii siitä, että tiimin jäsenet tuntevat tavoitteet. Motivoi ja koordinoi toisia ja pitää heidät keskittyneenä tavoitteisiin.",
+            "8": "Kehittää toisia delegoiden, valtuuttaen ja valmentaen. Ajaa henkilökohtaista ja ammatillista kehitystä.",
+            "9": "Tuntee organisaation vapaamuotoiset säännöt ja rakenteet ja käyttää hyväksi epävirallisia prosesseja asioiden eteenpäin viemisessä.",
+            "10": "Noudattaa työyhteisön sääntöjä ja määräyksiä; suorittaa tehtävät määrätietoisesti ja varmasti: saavuttaa laadukkaita tuloksia",
+            "11": "Toimii järjestelmällisesti ja systemaattisesti tehtävissään, määrittää selkeät prioriteetit ja hyödyntää resurssit tehokkaasti",
+            "12": "Luo vakaan, luotettavan työympäristön; tukee ja motivoi toisia vaikeina aikoina; on luotettava ja vakaa",
+            "13": "Ymmärtää ja analysoi nopeasti monimutkaiset asiat ja ongelmat, arvio asiat järkevästi, asiallisesti sekä tasapainoisesti",
+            "14": "On oman alansa vankka ammattiosaaja; pitää osaamistaan ajan tasalla; kehittää itseään jatkuvasti",
+            "15": "Luo kekseliäitä, uusia ideoita ja ratkaisuja; kyseenalaistaa perinteisen; edistää innovaatiota ja muutoksia",
+            "16": "Kommunikoi selkeästi, tarkasti ja jäsennellysti; esiintyy uskottavasti ja vakuuttavasti; esittää tehokkaasti",
+            "17": "Työskentelee tehokkaasti muiden kanssa; jakaa tietoa ja kokemuksia; tukee toisia ryhmän tavoitteiden saavuttamiseksi",
+            "18": "Tuntee omat vahvuutensa ja rajoituksensa; tarttuu oppimismahdollisuuksiin oman uransa kehittämiseksi"
+        },
+
+        "behavioral_models": {
+            "1": "Keskittyy omiin tehtäviinsä ja tavoitteisiinsa, on mukavuusalueellaan kun joku muu johtaa",
+            "2": "Ottaa vastuuta ja johtaa ryhmää jos tavoitteen saavuttaminen sitä vaatii, toimii parhaimmillaan rakentavana ryhmän jäsenenä",
+            "3": "Pitää vastuunkantamisesta; johtaa ja ohjaa mielellään muita; pitää ryhmän keskityneenä päämäärään.",
+            "4": "Hyväksyy muiden mielipiteet, ei ole taipuvainen vaikuttamaan muihin saadakseen nämä puolelleen koska antaa tosiasioiden puhua puolestaan",
+            "5": "Pystyy vakuuttamaan muihin ja saamaan nämä puolelleen, jos kokee asian tärkeäksi itselleen ja se vastaa omia mielipiteitä. ",
+            "6": "Nauttii ideoiden myynnistä ja neuvottelusta; kokee muihin vaikuttamisen helpoksi; pystyy vaikuttamaan muihin ja saavuttamaan heidän tukensa.",
+            "7": "Kuuntelee ja arvioi mieluummin kuin pitää esityksiä: ei nauti huomion keskipisteenä olosta",
+            "8": "Tuntee olonsa mukavaksi ja vaikuttaa itsevarmalta tutussa ympäristössä; kykenee esittelemään omaan osaamisalueeseensa liittyviä asioita selkeästi ja jäsennellysti",
+            "9": "Vaikuttaa erittäin itsevarmalta jopa vieraassa ympäristössä; on rento virallisissa tilaisuuksissa ja pitäessään esityksiä",
+            "10": "Viihtyy hyvin yksin; pitää yllä harvoja mutta pysyviä kontakteja; ei pyri tuomaan itseään esiin",
+            "11": "Nauttii seurasta; voi olla puhelias; tutussa ympäristössä seurallinen ja eloisa; toisinaan jopa viihdyttävä; vieraissa tilanteissa varautuneempi",
+            "12": "On puhelias; eloisa ja seurallinen; nauttii olla ihmisten parissa; viihdyttää muita ja ylläpitää laajaa kontaktiverkostoa",
+            "13": "Keskittyy mieluiten itsenäisesti työhön ja asioihin; noudattaa omaa tahtiaan ja lähestymistapaansa sen sijaan, että seuraisi muita",
+            "14": "Kykenee työskentelemään tehokkaasti sekä yksin että muiden kanssa; tukee ja auttaa muita pyydettäessä; on valmis kompromisseihin mutta ei anna periksi liian helposti",
+            "15": "On tiimiorientoitunut ja huomaavainen; nauttii työskentelystä muiden kanssa; on toisia tukeva ja miellyttävä työkaveri",
+            "16": "Pitäytyy tosiasioissa ja on rationaalinen; keskittyy mielummin kylmiin faktoihin kuin inhimilliseen näkökulmaan",
+            "17": "Ottaa huomioon sekä kovat, että pehmeät arvot; yleensä huomioi toisten rektiot sekä kiinnittää jonkin verran huomiota toisten motiiveihin ja käytökseen.",
+            "18": "On erittäin kiinnostunut toisten käytöksestä; havainnoi ja analysoi toisten motiiveja ja reaktioita",
+            "19": "Näkee lyhyen aikavälin ongelmat tarkasti ja yksityiskohtaisesti; ei kiinnitä heti huomiota tekojen ja tapahtumien pitkän aikavälin vaikutuksiin",
+            "20": "Keskittyy välittömiin tehtäviin ja tarkkailee asioita lyhyellä-keskipitkällä aikavälillä; ymmärtää yleensä tekojen ja tapahtumien merkittävimmät vaikutukset",
+            "21": "Ottaa laajan näkökulman; ymmärtää ja ottaa huomioon tekojen, tapahtumien ja suunnitelmien laajemmat ja pitkän aikavälin vaikutukset",
+            "22": "Lähestyy tehtäviä avoimesti ja ilman etukäteissuunnitelmia; pitää matkaa yhtä tärkeänä kuin päämäärää; nautti sivujuonteista ja poikkeamista; etsii optimaalista ratkaisua",
+            "23": "Pyrkii löytämään tasapainon käytännöllisyyden ja parhaan ratkaisun välille; on päämäärätietoinen, mutta valmis hyväksymään joitain poikkeamia",
+            "24": "On erittäin käytännöllinen ja päämäärätietoinen; keskittyy tulosten saavuttamiseen; ratkoo ongelmia nopeasti ja tehokkaasti",
+            "25": "On joustava ja pystyy sopeutumaan kaaokseen, epäjärjestykseen ja muuttuviin suunnitelmiin; nautii siitä, ettei ole selkeitä suunnitelmia, määräaikoja tai prioriteetteja",
+            "26": "On yleensä systemaattinen ja lähestyy asioita hyvin organisoidusti, mutta suhtautuu joustavasti äkillisiin muutoksiin; toisinaan ylittää määräajat, mutta muistaa prioriteetit",
+            "27": "On erittäin systemaattinen ja hyvin organisoitu, määrittää selkeät prioriteetit, suunnittelee ennakoon ja pystyy arvioimaan ajankäyttönsä realistisesti. Pitää kiinni määräajoista",
+            "28": "Tulkitsee sääntöjä ja prosesseja ja toimintatapoja joustavasti viedäkseen asioita eteenpäin; aloittaa paljon asioita mutta siirtää niiden loppuun saattamisen muille",
+            "29": "Käyttää hyväkseen olemassa olevien sääntöjen ja toimintatapojen antamaa pelivaraa; toisinaan oikoo laadussa saadakseen tuloksia nopeammin",
+            "30": "Seuraa tarkasti annettuja toimintamalleja; pitää kiinni säännöistä ja toimintatavoista; vie työt lopuun ja kiinnittää huomioita laatuun.",
+            "31": "Luottaa intuition asioiden ja ongelmien arvioinnissa; ei kaipaa paljoa tietoa asioita analysoidessaan; ei tunne tarvetta päästä asioiden ytimeen",
+            "32": "Yleensä hahmottaa uudet asiat ja ongelmat nopeasti; käyttää hyväkseen olemassaolevaa tietoa oman intuitionsa lisäksi; kaipaa päätöksentekoon hieman aikaa uusia ja monimutkaisia asioita kohdatessaan",
+            "33": "Ymmärtää nopeasti monimutkaiset asiat ja ongelmat; tunnistaa ongelmien ytimen; arvioi tiedot perinpohjaisesti",
+            "34": "Työskentelee mieluiten konkreettisten ja käytännönläheisten ongelmien parissa; kokee yleensä abstraktit keskustelut strategoista ja teorioista ajanhukkana",
+            "35": "Pystyy ymmärtämään strategisia ja konseptuaalisia kysymyksiä, mutta keskittyy etupäässä näiden soveltamiseen käytännön tasolla; ei koe teoreettisia tai intellektulleja väittelyitä kovinkaan hedelmällisinä",
+            "36": "Nautii konseptien, mallien ja strategioiden työstämisestä; pitää älyllisitä haasteista ja etsii niitä",
+            "37": "Kehittää perinteisiä ratkaisuja; pitäytyy tutuissa ja turvallisissa rakaisuissa; on erittäin maanläheinen",
+            "38": "Arvostaa uusia lähestymistapoja, mutta epäilee kykyään tuottaa luovia ratkaisuja; kehittää toisten ideoita ja tarjoaa toisinaan omia rakaisuja",
+            "39": "Kykenee ajattelemaan luovasti; kehittää luovia ja uudenlaisia ajatuksia ja ratkaisuja.",
+            "40": "Suhtautuu muutokseen ja uutuuksin varauksellisesti; suosii hyväksi todettuja lähestymistapoja ja ratkaisuja; näkee muutosten ja innovaatioiden huonot puolet ja riskit",
+            "41": "On avoin uusille asioille ja lähestymistavoille, mutta muistaa myös perinteisten rakaisujen arvon; ei suosi muutosta vain muutoksen vuoksi",
+            "42": "Kannattaa uusia ideoita ja asioita; nauttii muutoksesta ja uutuuksista; etsii jatkuvasti keinoja parantaa asioita",
+            "43": "Pelaa työssä varman päälle; varmistaa että saa muiden tuen ja avun; on varovainen ja pidättyväinen omien mielipiteiden ja näkökulmien esilletuomisessa",
+            "44": "Otaa ohjat, mutta varmistaa muiden tuen; käyttää työn tarjoamaa pelivaraa tehtäviensä suoritamiseen; ottaa huomioon toisten tunteet joidenkin asioiden ja mielipiteiden suhteen",
+            "45": "Toimii oma-alotteisesti; tekee työnsä oman mielen mukaan; tuo näkökulmiaan ja mielipiteitään julki vapaasti ja epäröimättä",
+            "46": "On tyytyväinen omiin saavutuksiinsa; suhtautuu tulevaan rauhallisesti; välttää suuria henkilökohtaisia haasteita; arvostaa hyvää työn ja vapaa-ajan suhdetta.",
+            "47": "On kunnianhimoinen siinä missä muutkin; asettaa itselleen realistisia tavoitteita; haluaa edetä urallaan, muttei hinnalla millä hyvänsä",
+            "48": "Asettaa itselleen kunnianhimoisia ja vaativia tavoiteita; nauttii haasteista ja haluaa edetä ja menestyä.",
+            "49": "Ei pidä kilpailusta; hyväksyy muiden keräävän kunnian, kunhan on saavuttanut henkilökohtaiset tavoitteensa",
+            "50": "Kilpailee toisten kanssa toisinaan, muttei koe tarvetta voitaa hinnalla millä hyvänsä; ei painota omia saavutuksiaan tai menestystään",
+            "51": "Nautii kilpailusta; on erittäin voitontahtoinen; nauttii omista saavutuksistaan kertomisesta",
+            "52": "On erittäin sitoutunut; ylittää toistuvasti itsensä täyttääkseen tehtävän; tuntee itsensä ajoittain voimattomaksi",
+            "53": "Osoittaa hyvää tarmoa ja sitoutumista; selviää helposti tavanomaisesta stressitasosta; on yhtä vahva ja kestävä kuin kuka tahansa",
+            "54": "Osoittaa vahvaa tahtoa ja päämäärätietoisuutta; suhtautuu työhön energisesti; työskentelee tehokkaasti ja keskittyneesti myös paineen alla"
+        }
+    },
+
+    "uploader": {
+        "crop": "Rajaa kuva",
+        "save": "Tallenna",
+        "cancel": "Peruuta"
+    },
+
+    "menu": {
+        "frontpage": "Etusivu",
+        "profile": "Profiilisi",
+        "tests": "Itsearvioinnit",
+        "settings": "Asetukset",
+        "go_back": "Takaisin"
+    },
+
+    "login": {
+        "email": "Sähköposti",
+        "password": "Salasana",
+        "remember_me": "Muista minut",
+        "login": "Kirjaudu sisään",
+        "readmore": "Tutustu palveluun",
+        "readmore_link" : "https://www.mazhr.com/",
+        "or": "tai",
+        "login_linkedin": "Kirjaudu LinkedIn:llä",
+        "forgot_title": "Unohditko salasanasi?",
+        "forgot_email": "Sähköpostiosoitteesi",
+        "forgot_submit": "Lähetä uusi salasana"
+    },
+
+    "start": {
+        "login": "Kirjaudu sisään",
+        "register": "Rekisteröidy"
+    },
+
+    "frontpage": {
+        "title": "<span>Sinulle</span> avautuu koko ajan uusia uramahdollisuuksia!",
+        "intro": "Mazhr tarjoaa Sinulle jatkuvasti lukuisia uusia avoimia työpaikkoja, joista voit helposti löytää juuri Sinulle sopivat ja hakea niitä halutessasi. Mitä syvällisemmin olet täyttänyt oman profiilisi, sitä paremmin Mazhr ohjaa Sinua uravalinnassasi ja työnantaja löytää juuri Sinut.",
+
+        "open_total": "Avoimia mahdollisuuksia yhteensä",
+        "open_difference_before": "muutos eiliseen ",
+        "open_difference_after": "",
+
+        "no_results": "Ei hakutuloksia.",
+        "too_many_results": "Hakutuloksia on yli 200 kappaletta. Tarkenna hakuehtoja.",
+
+        "form": {
+            "i_want_to_be_before": "Voisin olla",
+            "i_want_to_be_after": "",
+            "i_could_be_before": "Sinulle sopisi",
+            "i_could_be_after": "",
+            "area_before": "",
+            "area_after": "alueella",
+            "keywords": "Avainsanan avulla voit halutessasi vielä tarkentaa hakuasi",
+            "submit": "Hae mahdollisuudet",
+            "choose": "valitse",
+            "whatever_profession": "mikä tahansa",
+            "whatever_area": "missä tahansa"
+        },
+
+        "sidebar": {
+            "title_welcome": "Uusi palvelu työnhakuun ja urasuunnitteluun",
+            "intro": "<div class=\"anim-in\"><h2>Find</h2><p>Tuhansista avoimista työpaikoista voit helposti suodattaa Sinulle sopivimmat ja hakea niitä. Mikäli olet täydentänyt profiiliasi myös itsearvioinneilla, Mazhr auttaa Sinua myös urasuunnittelussasi.</p></div><div class=\"anim-in\"><h2>Get Found</h2><p>Lukuisat yritykset etsivät tälläkin hetkellä Sinun kaltaisia tekijöitä. Luomalla profiilin Mazhr -palveluumme, olet myös löydettävissä. Itse päätät, haluatko olla löydettävissä tai haluatko olla rekrytointiprosesseissa anonyyminä vai nimelläsi.</p></div><div class=\"anim-in\"><h2>Be Valued</h2><p>Todenna ja näytä potentiaalisi tekemällä Mazhr:in itsearviointitestejä. Se auttaa Sinua tunnistamaan omia vahvuuksiasi ja kehityskohteitasi urasuunnitelmiesi ja työnhaun tueksi.</p></div>",
+            "intro_phase1": "Etsi itsellesi kiinnostavia mahdollisuuksia tehtävän, yrityksen tai paikan mukaan",
+            "intro_phase2": "Tee oma työelämän persoonallisuuttasi mittaava testi ja saat tietää mitkä tehtävät olisivat sinun persoonaasi sopivia",
+            "intro_phase3": "Löydä ja ilmoittaudu niihin tehtäviin joista olet kiinnostunut, olet silloin automaattisesti mukana hakuprosessissa",
+            "title_news": "Ajankohtaista",
+            "readmore": "Lue lisää",
+
+            "matches_intro_title": "Uusi palvelu työnhakuun ja urasuunnitteluun",
+            "matches_intro_text": "<div class=\"anim-in\"><h2>Find</h2><p>Tuhansista avoimista työpaikoista voit helposti suodattaa Sinulle sopivimmat ja hakea niitä. Mikäli olet täydentänyt profiiliasi myös itsearvioinneilla, Mazhr auttaa Sinua myös urasuunnittelussasi.</p></div><div class=\"anim-in\"><h2>Get Found</h2><p>Lukuisat yritykset etsivät tälläkin hetkellä Sinun kaltaisia tekijöitä. Luomalla profiilin Mazhr -palveluumme, olet myös löydettävissä. Itse päätät, haluatko olla löydettävissä tai haluatko olla rekrytointiprosesseissa anonyyminä vai nimelläsi.</p></div><div class=\"anim-in\"><h2>Be Valued</h2><p>Todenna ja näytä potentiaalisi tekemällä Mazhr:in itsearviointitestejä. Se auttaa Sinua tunnistamaan omia vahvuuksiasi ja kehityskohteitasi urasuunnitelmiesi ja työnhaun tueksi.</p></div>",
+
+            "matches_title": "Sopivimmat sinulle",
+            "matches_description": "Työpersoonaltaan kaltaisesi henkilöt yleensä menestyvät tällaisissa tehtävissä."
+        },
+
+        "match_description": "Mitä enemmän tähtiä, sitä lähempänä olet kyseisen tehtävän ihanneprofiilia.",
+        "no_matches": "Valitettavasti valitsemallasi alueella ei löydy sopivia avoimia paikkoja.",
+
+        "match_profiles": {
+            "12820_gen": "Monipuoliset asiakaspalvelun tehtävät",
+            "12821_gen": "Monipuoliset asiakkuuksien hallinnan tehtävät",
+            "12822_gen": "Tuotepäällikön tehtävät",
+            "12823_gen": "Kehitys- ja suunnittelujohtajan tehtävät",
+            "12824_gen": "Ihmistuntemusta vaativat tehtävät",
+            "12825_gen": "Myyntitehtävät",
+            "12826_gen": "Vaativat tekniset konsultoinnin tehtävät"
+        }
+
+    },
+
+    "profile": {
+        "update_picture": "Päivitä profiilikuva",
+
+        "title_summary": "Yhteenveto",
+        "summary_i_am": "Olen",
+        "summary_i_want_to_be": "Haluaisin olla",
+        "summary_keywords": "Avainsanat",
+
+        "title_education": "Koulutus",
+
+        "title_experience": "Työkokemus",
+
+        "title_skills": "Osaaminen",
+        "skills_language": "Kielitaito",
+        "skills_tasks": "Tehtävät",
+        "skills_experience": "Kokemus",
+        "skills_primary_experience": "Pääasiallinen työkokemus alalta",
+
+        "title_contacts": "Yhteystiedot",
+
+        "time_current": "nykyhetki",
+
+        "add": "Lisää",
+        "edit_start": "Muokkaa",
+        "edit_save": "Tallenna",
+        "edit_cancel": "Peruuta",
+
+        "form": {
+            "interests": {
+                "fulltime": "kokoaikatyöstä",
+                "parttime": "osa-aikatyöstä",
+                "shifts": "vuorotöistä",
+                "evenings_weekends": "ilta- ja viikonlopputöistä"
+            },
+
+            "cards": {
+                "sanssi": "Sanssi-kortti",
+                "duuni": "Duuni-kortti"
+            },
+
+            "experience_fields": {
+                "leadership": "Johtotehtävissä",
+                "superior": "Esimiehenä",
+                "entrepreneur": "Yrittäjänä",
+                "abroad": "Töissä kotimaan ulkopuolella"
+            },
+
+            "contact_fields": {
+                "email": "Sähköposti",
+                "phone": "Puhelin",
+                "link": "Linkki"
+            },
+
+            "language": "Kieli",
+            "language_skill": "Osaaminen",
+
+            "i_am_interested_in": "Olen kiinnostunut",
+
+            "location": "Olen kiinnostunut työtehtävistä",
+            "locations": {
+                "home": "kotimaassa",
+                "abroad": "kotimaan ulkopuolella"
+            },
+
+            "i_have": "Minulla on",
+            "my_highest_education": "Korkein tutkintoni on",
+            "my_professional_keywords": "Ammatilliset avainsanat",
+
+            "company": "Työnantaja",
+            "title": "Titteli",
+
+            "school": "Oppilaitos",
+            "degree": "Tutkinto",
+            "level": "Koulutusala",
+
+            "month": "kk",
+            "year": "vuosi",
+            "end_year": "Valmistumisvuosi",
+            "education_not_ended": "Ei vielä valmistunut",
+            "not_ended": "Ei ole päättynyt",
+            "keywords": "Avainsanat",
+            "remove": "Poista",
+            "choose": "Valitse"
+        },
+
+        "languages": {
+            "en_en": { "name": "englanti" },
+            "es_es": { "name": "espanja" },
+            "nl_nl": { "name": "hollanti" },
+            "it_it": { "name": "italia" },
+            "ja_ja": { "name": "japani" },
+            "zh_cn": { "name": "kiina" },
+            "el_el": { "name": "kreikka" },
+            "no_no": { "name": "norja" },
+            "pt_pt": { "name": "portugali" },
+            "pl_pl": { "name": "puola" },
+            "fr_fr": { "name": "ranska" },
+            "ro_ro": { "name": "romania" },
+            "sv_se": { "name": "ruotsi" },
+            "de_de": { "name": "saksa" },
+            "fi_fi": { "name": "suomi" },
+            "da_da": { "name": "tanska" },
+            "cs_cs": { "name": "tshekki" },
+            "ru_ru": { "name": "venäjä" },
+            "et_et": { "name": "viro" },
+            "xx_xx": { "name": "muu" }
+        },
+
+        "language_skill_ratings": {
+            "5": "Sujuva",
+            "4": "Erinomainen",
+            "3": "Hyvä",
+            "2": "Tyydyttävä",
+            "1": "Alkeet"
+        },
+
+        "primary_experience_types": {
+            "1": "Tukku- ja vähittäiskauppa",
+            "2": "Teollisuus ja kaivostoiminta",
+            "3": "Kuljetus ja varastointi",
+            "4": "Majoitus ja ravitsemus",
+            "5": "Rakentaminen",
+            "6": "Vesi- ja jätehuolto",
+            "7": "Sähkö-, kaasu-, lämpö ja jäähdytyshuolto",
+            "8": "Huolto- ja korjaustoiminnot",
+            "9": "Kiinteistöt",
+            "10": "Rahoitus ja vakuutus",
+            "11": "Markkinointi, viestintä ja julkaisu",
+            "12": "Konsultointi, suunnittelu, tutkimus",
+            "13": "Hallinto ja tukipalvelut",
+            "14": "Laki- ja laskentapalvelut",
+            "15": "ICT, ohjelmistot, pelit",
+            "16": "Maanpuollustus ja suojelutehtävät",
+            "17": "Opetus- ja koulutustoiminta",
+            "18": "Terveys ja sosiaalipalvelut",
+            "19": "Viihde, taide, virkitys",
+            "20": "Maa-, metsä- ja kalatalous",
+            "21": "Kotitaloudet",
+            "22": "Muu palvelutoiminta"
+        }
+
+    },
+
+    "tests": {
+        "separator_first": "Aloita tästä",
+        "separator_rest": "Lisätestit",
+
+        "title": "<span>Vahvista</span> profiiliasi itsearvioinneilla",
+        "intro": "<p>Mazhr tarjoaa sinulle kattavan valikoiman tasokkaita työelämän eri tilanteissa käytettäviä testejä. Itsearviointien avulla voit hahmottaa omaa osaamistasi ja potentiaalia sekä tunnistaa miten juuri sinun omat piirteesi vastaavat avoinna olevien työtehtävien vaatimuksia.</p><p>Testien tulokset ovat tarkoitettu sinun oman kehittymisesi tueksi. Voit halutessasi liittää tulokset osaksi profiiliasi ja näin edistää oman työmarkkina-arvosi kehittymistä. Päätät aina itse mikä osa profiilistasi on näkyvää työnantajille. Halutessasi voit suorittaa testin uudestaan tai poistaa tulokset profiilistasi.</p><p>Testien tulokset ovat ladattavissa pdf-dokumentteina käyttötarkoituksiisi oman Mazhr:n Testit-sivulta.</p>",
+        "readmore": "Lue lisää",
+
+        "sidebar": {
+            "title": "Testimenetelmämme on luotettava",
+            "summary": "<p>MAZHR työelämän testit ovat maailman johtavan rekrytointiin ja henkilöstön kehittämiseen käytettyjen internetpohjaisten testien toimittajan, cut-e Groupin suunnittelemia. Kokeneiden psykologien jatkuvasti kehittämät testit ovat DNV sertifioituja ja täyttävät luotettavalle testausmenetelmälle asetetut vaatimukset.  Käyttämillämme testeillä arvioidaan vuosittain yli 4 miljoonaa henkilöä yli 70 maassa, useammalla kuin 40 kielellä.</p>",
+            "payment_title": "Maksutavat",
+            "payment_summary": "<p>Maksaa voit kaikkien kotimaisten pankkien verkkomaksuilla sekä yleisimmillä maksukorteilla.</p><p>Maksupalveluntarjoajana toimii Paytrail.</p>"
+        },
+
+        "result_title": "Yhteenveto tuloksestasi",
+        "discount_code": "Alennuskoodi",
+        "insert_discount_code": "Syötä alennuskoodi",
+        "insert_discount_code_submit": "Tarkista",
+        "do_test": "Tee testi",
+        "do_test_again": "Tee testi uudelleen",
+        "buy_test": "Osta testi",
+        "claim_test": "Lunasta testi",
+        "open_results": "Lataa tuloksesi",
+        "choose_language": "Testikieli:",
+        "choose_language_choose": "valitse",
+        "reset_test": "Poista",
+        "reset_payment": "Keskeytä maksu",
+
+        "testids": {
+            "test-102": "shapes",
+            "test-201": "views",
+            "test-301": "scales_numerical",
+            "test-302": "scales_verbal",
+            "test-315": "scales_lt-e",
+            "test-357": "scales_sx"
+        },
+
+        "testdata": {
+            "shapes": {
+                "name": "Persoonallisuus ja käyttäytyminen",
+                "subtitle": "Tunnista vahvuutesi ja kehittymisen alueet",
+                "description": "Testimme mittaa niitä persoonallisuuden piirteitä, jotka ovat tärkeitä henkilöstöön liittyviä päätöksi tekeville yrityksille. Itsearvioinnin tarkoituksena on ennustaa mahdollisimman tarkasti työelämään liittyviä kompetenssejasi. Tulokset antavat sinulle arvokasta tietoa työelämän tilanteisiin liittyvistä sinulle luoteenomaisesta käyttäytymismalleista sekä ammatillisesta potentiaalistasi.",
+                "more": "MAZHR peilaa testin tuloksia useiden avoimeksi ilmoitettujen työpaikkojen vaatimuksiin ja antaa sinulle tietoa vastaavatko ominaisuutesi tehtävälle tyypillisesti asetettuja vaatimuksia.<br>Testissä hyödynnetyn mukautuvan mittausteknologian ansiosta kyselylomakkeemme ovat lyhyitä ja käyttäjäystävällisiä. Ne antavat luotettavia tuloksia, jotka ovat helposti ymmärrettäviä ja käytäntöön hyödynnettäviä<br>Persoonallisuus ja käyttäytymistestejä käytetään yleisesti henkilöstöön liittyvissä valinta- ja kehitystilanteissa."
+            },
+            "views": {
+                "name": "Arvot ja motivaatio",
+                "subtitle": "Valitse työnantaja joka jakaa kanssasi samankaltaisen arvomaailman",
+                "description": "Testimme mittaa henkilökohtaiset arvosi, ammatilliset kiinnostuksesi aiheet sekä työelämään liittyvät motiivisi. Kykenet menestymään ja työskentelemään tehokkaammin, mitä paremmin työympäristösi vastaa henkilökohtaisia arvojasi, vaikuttimiasi ja kiinnostuksen kohteita.",
+                "more": "Kerromme sinulle raportissamme missä olosuhteissa ja ammatillisessa ympäristössä pystyt toteuttamaan ja kehittämään potentiaaliasi parhaiten.<br>Arvo- ja motivaatiotestejä käytetään yrityksissä yhä enemmän rekrytointien yhteydessä. Yrityksen ja henkilöstön yhteiset arvot ovat valintoja ohjaavia periaatteita, jotka antavat osapuolille ymmärryksen siitä, mikä on tärkeää ja millaisia tavoitteita kohti edetään yhdessä. Arviointien avulla selvitetään, mitkä tekijät lisäävät tai vähentävät henkilön motivaatiota ja toimintakykyä työelämässä. Arvokasta informaatiota voidaan käyttää myös työtyytyväisyyden kehittämiseen."
+            },
+            "scales_numerical": {
+                "name": "Numeraalinen päättelykyky",
+                "subtitle": "Osaatko tehdä loogisia päätöksiä numeroiden perusteella",
+                "description": "Testimme mittaa kykyäsi ymmärtää numeerista tietoa ja tehdä oikeita päätöksiä tehtävissä kohtaamasi tiedon perusteella. Hyvää numeerista päättelykykyä tarvitaan erityisesti tehtävissä, joissa työskennellään budjettien, tilastomateriaalien tai muun numerotiedon parissa.",
+                "more": "Kyky omaksua monimutkaista tietoa nopeasti ja tarkasti paineen alla on erityisen tärkeää yrityksen johtoon liittyvissä rooleissa.<br>Raportissamme testitulostasi verrataan laajaan vertailuryhmään ja saat tietää miten oma tuloksesi sijoittuu muihin testin suorittaneisiin verrattuna. Lisäksi testissä arvioidaan tapaa, jolla käsittelet kohtaamaasi informaatiota."
+            },
+            "scales_verbal": {
+                "name": "Verbaalinen päättelykyky",
+                "subtitle": "Miten hyvin hallitset verbaalisen informaation",
+                "description": "Testimme mittaa kykyäsi ymmärtää ja arvioida kirjoitetun viestin tietoa ja sanomaa. Rekrytointien yhteydessä verbaalista päättelykykyä mitataan erityisesti silloin, kun työtehtäviin kuuluu kirjallisen sekä suullisen informaation analysointia ja tulkintaa.",
+                "more": "Testimme mittaa sinun kykyä etsiä esillä olevan tiedon joukosta oikeita vastauksia lukuisiin eri kysymyksiin. Hyvät verbaaliset kyvyt ovat eduksi tehtävissä joihin liittyy esitysten ja erilaisten dokumenttien tuottamista. Useimmissa johtotehtävissä johtajat joutuvat perehtymään laajoihin aineistoihin joista täytyy nopeasti hahmottaa olennaisin informaatio.<br>Raportissamme testitulostasi verrataan laajaan vertailuryhmään ja saat tietää miten oma tuloksesi sijoittuu muihin testin suorittaneisiin verrattuna."
+            },
+            "scales_lt-e": {
+                "name": "Englannin kielen testi",
+                "subtitle": "Miten hyvin hallitset englanninkielen tekstejä ja sanastoa",
+                "description": "Testimme mittaa englannin kielen taitoasi sujuvuuden, sanaston sekä oikeinkirjoituksen näkökulmista.  Englannin kielen hallinta kuuluu nykyisin useimpien asiantuntija- sekä johtotehtävien perusvaatimuksiin.  Raportissa tuloksesi perustuu näiden alueiden osatulosten yhdistelmään.",
+                "more": "<br>Mazhr asiakkaana voit osoittaa kielitaitosi liittämällä testituloksesi osaksi rekrytoijille läpinäkyvää profiilia. "
+            },
+            "scales_sx": {
+                "name": "Looginen päättelykyky",
+                "subtitle": "Teetkö oikeita johtopäätöksiä kohdatessasi monimutkaisia asiakokonaisuuksia",
+                "description": "Testimme mittaa kykyäsi tunnistaa monitahoisia syy-seuraus-ketjua ja luontaisia valmiuksiasi tehdä oikeita johtopäätöksiä niiden perusteella. Loogista päättelykykyä mitataan rekrytointitilanteiden ohella mm. oppilaitosten oppilasvalintojen yhteydessä.",
+                "more": "<br>Raportissamme testitulostasi verrataan laajaan vertailuryhmään ja saat tietää miten oma tuloksesi sijoittuu muihin testin suorittaneisiin verrattuna. Suorituksesi pistemäärän lisäksi, testi mittaa tiedonkäsittelytapaasi."
+            }
+        },
+
+        "result_texts": {
+            "1": "Harjoitus voi tehdä Sinustakin mestarin! Tämä osaamisalue ei ole vielä Sinun vahvuuttasi. Jos haluat alaille, jossa tätä taitoa tarvitaan, Sinulta vaaditaan nyt erityistä sitkeyttä ja määrätietoisuutta tämän taidon kohentamiseen.",
+            "2": "Sinulla on edellytykset kehittyä hyväksi tämän alueen taitajaksi, mutta se vaatii Sinulta vielä paljon työtä. Jos haaveenasi on päästä alalle, jossa tätä taitoa arvostetaan, kannattaa aloittaa harjoittelu heti, jotta se ei olisi esteenä unelmasi toteuttamisessa.",
+            "3": "Olet jo melko hyvä tämän taidon osaamisessa, mutta tullaksesi hyväksi, Sinulta vaaditaan vielä lisää harjoittelua.  Jos haluamassasi tehtävässä painotetaan tämän taidon tärkeyttä, kannattaa varmistaa, että taitosi ovat riittävät, sillä hakijoiden joukossa saattaa olla muita, joilla tämä alue on vahvempi.",
+            "4": "Taitosi tällä osa-alueella on jo melko hyvä, keksimääräinen tai sitä parempi. Mikäli toiveissasi on työ, jossa tämän alueen osaaminen on tärkeää, harjoittele vielä lisää, sillä Sinulla on kaikki mahdollisuudet kehittyä erinomaiseksi  osaajaksi!",
+            "5": "Tämä taito on vahvuutesi. Mieti tuleeko tämä vahvuutesi riittävästi esiin nykyisessä työssäsi. Aivan terävimpään huippuun tässä taidossa Sinulla on enää lyhyt matka! Tuo tämä vahvuutesi esiin, mikäli olet etsimässä työtä. Jos suunnittelet uraasi, tämä on vahvuus, joka Sinun kannattaa suunnitelmissasi huomioida.",
+            "6": "Onneksi Olkoon! Olet aivan terävintä huippua tällä osa-alueella! Mieti, onko tämä erinomainen taitosi käytössä nykyisessä työssäsi. Mikäli olet hakeutumassa uusiin haasteisiin tuo tämä osaamisesi selkeästi esiin."
+        },
+
+        "test_languages": {
+            "fi_fi": { "name": "suomi", "test_id": 17 },
+            "sv_se": { "name": "ruotsi", "test_id": 11 },
+            "en_en": { "name": "englanti", "test_id": 2 },
+            "es_es": { "name": "espanja", "test_id": 9 },
+            "nl_nl": { "name": "hollanti", "test_id": 8 },
+            "it_it": { "name": "italia", "test_id": 4 },
+            "zh_cn_simp": { "name": "kiina, yks.", "test_id": 19 },
+            "zh_cn": { "name": "kiina, per.", "test_id": 20 },
+            "el_el": { "name": "kreikka", "test_id": 18 },
+            "no_no": { "name": "norja", "test_id": 6 },
+            "pt_pt": { "name": "portugali", "test_id": 10 },
+            "pl_pl": { "name": "puola", "test_id": 13 },
+            "fr_fr": { "name": "ranska", "test_id": 3 },
+            "ro_ro": { "name": "romania", "test_id": 7 },
+            "de_de": { "name": "saksa", "test_id": 1 },
+            "sk_sk": { "name": "slovakia", "test_id": 29 },
+            "da_da": { "name": "tanska", "test_id": 16 },
+            "cs_cs": { "name": "tshekki", "test_id": 14 },
+            "ru_ru": { "name": "venäjä", "test_id": 15 }
+        }
+    },
+
+    "settings": {
+        "sidebar": {
+            "title": "Tuki",
+            "summary": "<p>Mikäli Sinulla on kysyttävää palvelustamme tai sen käytöstä, otathan meihin yhteyttä! <a href=\"mailto:support@mazhr.com\">support@mazhr.com</a></p>",
+            "title_faq": "Usein kysyttyä",
+            "faq": [
+                { "q": "Kuka näkee profiilini?", "a": "Vain Sinä itse näet tekemäsi profiilin ja tekemiesi itsearviointien tulokset. Jos kuitenkin haluat, että sinusta kiinnostunut yritys näkee profiilisi, sinun pitää antaa siihen ensin lupa."},
+                { "q": "Miten yritys löytää minut, jos haluan olla löydettävissä?", "a": "Profiilisi on noudettavissa anonyymisti tietokannastamme ja sitä peilataan avoinna olevan tehtävän vaatimusprofiiliin.<br>Mikäli match-tulos on riittävän hyvä, yritykselle ilmoitetaan lista parhaiten tehtävään soveltuvista kandidaateista (anonyymeinä). Jos olet kiinnostunut paikasta, prosessisi jatkuu suoraan yrityksen kanssa."},
+                { "q": "Saako työnantajani tietää, että etsin uutta työpaikkaa?", "a": "Ei saa tietää, sillä voit rakentaa ja kehittää omaa digitaalista profiiliasi kenenkään siitä tietämättä ja valita itse kenelle tiedot itsestäsi annat ja milloin tai annatko lainkaan."},
+                { "q": "Ovatko testitulokseni varmasti paikassa, josta ulkopuolinen ei pääse niitä katsomaan?", "a": "Tuloksesi näkyvät vain Sinulle omassa Mazhr- profiilissasi. Raportit haetaan jokainen kerta erikseen bittitiedostoista, joten Mazhr -palvelutoimittajan M2Talent Oy:n ja testitoimittajan Cut-e:n lisäksi ulkopuoliset eivät pysty muodostamaan raportteja."},
+                { "q": "Ovatko testit luotettavia?", "a": "Testit ovat luotettavia. Saksalaisen testitoimittajan Cut-e:n testejä tehdään yli 5 miljoonaa vuodessa ja niitä käyttävät mm. suuret kansainväliset yritykset kyvykkyyksiä arvioidessaan. Testit ovat sertifioituja testejä ja ne perustuvat piirreteoriaan."},
+                { "q": "Miten kauan tietojani säilytetään?", "a": " Palvelun idea on, että syntyy henkilökohtainen ”life time” digitaalinen profiili, jota on helppo päivittää ja se olisi siten tarvittaessa aktivoitavissa työmarkkinoille niin halutessasi.<br>Mikäli henkilö haluaa, tiedot voidaan poistaa heti kun pyyntö Mazhr-palvelun ylläpitäjälle M2Talent Oy:lle on tullut."},
+                { "q": "Voiko testejä uusia?", "a": "Testit voi uusia. Persoonallisuutta koskevan itsearvioinnin tulos ei juurikaan muutu, kun taas motivaatio voi vaihdella ympäristön ja oman elämäntilanteen mukaan.<br>Voit tehdä myös useita taitotestejä ja etenkin niissä pystyt kehittämään taitojasi ja saamaan parempia tuloksia."},
+                { "q": "Mitä palvelun käyttö maksaa?", "a": "Osa palvelusta on maksutonta: Pääset rakentamaan profiiliasi, näkemään tarjolla olevia työpaikkoja ja hakemaan niitä suoraan palvelustamme. Kun alat syventää profiiliasi ja todentaa kompetenssejasi tai taitojasi itsearviointien ja testien kautta, Sinulle tarjotaan myös mahdollisuus maksullisiin palvelun osiin. Voit itse päättää, haluatko syventää profiiliasi maksullisten palvelujen avulla vai et. Mitä syvällisempi profiili Sinulla on, sitä osuvampia, Sinulle sopivimpia työpaikkamahdollisuuksia saat. Samalla saat tietoa kehityskohteistasi ja parannat mahdollisuuksiasi tulla kutsutuksi Sinulle sopivimpiin hakuprosesseihin."}
+            ],
+            "registry": "Palvelun <a href=\"terms_of_use/\" target=\"_blank\">käyttöehdot</a> ja <a href=\"registry_policy/\" target=\"_blank\">rekisteriseloste</a>"
+        },
+
+        "logout_title": "Kirjaudu ulos",
+        "logout_description": "",
+        "logout_button": "Kirjaudu ulos",
+
+        "linkedin_fetch_title": "Nouda LinkedIn -tiedot uudestaan",
+        "linkedin_fetch_description": "",
+        "linkedin_fetch_button": "Nouda tiedot",
+
+        "password_title": "Vaihda salasanasi",
+        "password_1": "Uusi salasana",
+        "password_2": "Salasana uudelleen",
+        "password_save": "Tallenna",
+        "password_description": "",
+
+        "email_title": "Vaihda sähköpostiosoitteesi",
+        "email_field": "Uusi sähköpostiosoitteesi",
+        "email_description": "Voit vaihtaa sähköpostiosoitteesi, jota käytetään palveluun kirjautumiseen.",
+        "email_save": "Tallenna",
+
+        "remove_title": "Poista tili",
+        "remove_description": "Jos et aio enää käyttää palvelua, voit poistaa tilisi tästä. Poisto on lopullinen, eikä tiliä voida poiston jälkeen enää palauttaa.",
+        "remove_save": "Poista tili",
+
+        "privacy_title": "Yksityisyysasetukset",
+        "privacy_public_title": "Profiilin näkyvyys",
+        "privacy_public_description": "Profiilisi ei oletuksena näy muille. Jos haluat, voit asettaa profiilisi julkiseksi, jolloin työnantajat voivat katsella tietojasi. Voit asettaa profiilisi osien näkyvyyden erikseen.",
+        "privacy_public_select": "Julkinen profiili",
+
+        "privacy_public_profile_address": "Profiilin osoite",
+
+        "privacy_parts_title": "Profiilin osien näkyvyys",
+        "privacy_show_extras": "Näytä yhteenveto ja yhteystiedot",
+        "privacy_show_workhistory": "Näytä työkokemus",
+        "privacy_show_education": "Näytä koulutus",
+        "privacy_show_skills": "Näytä osaaminen",
+        "privacy_show_tests": "Näytä testitulokset",
+        "privacy_show_image": "Näytä profiilikuva",
+
+        "privacy_save": "Tallenna"
+    },
+
+    "register": {
+        "name_first": "Etunimesi",
+        "name_last": "Sukunimesi",
+        "email": "Sähköpostiosoitteesi",
+        "password": "Luo salasana",
+        "education_level": "Korkein tutkintosi",
+        "choose": "Valitse",
+        "final_title": "Melkein valmista!",
+        "final_subtitle": "Vahvista vielä rekisteröintisi.",
+        "submit": "Rekisteröidy",
+        "agree": "Rekisteröitymällä hyväksyn <a href=\"terms_of_use/\" target=\"_blank\">käyttöehdot</a> ja <a href=\"registry_policy/\" target=\"_blank\">rekisteriselosteen</a>",
+
+        "placeholder_name_first": "Etunimi",
+        "placeholder_name_last": "Sukunimi",
+        "placeholder_email": "esimerkki@malliosoite.fi",
+        "placeholder_password": "••••••",
+
+        "error_name_first": "Syötä etunimesi",
+        "error_name_last": "Syötä sukunimesi",
+        "error_email": "Tarkista sähköpostiosoitteesi",
+        "error_password": "Salasanan on oltava vähintään kuusi merkkiä pitkä",
+        "error_education_level": "Valitse korkein tutkintosi",
+        "error_submit": "Ongelma rekisteröinnissä. Tarkista tietosi ja yritä uudelleen",
+
+        "register_linkedin": "Rekisteröidy LinkedIn palvelun kautta",
+        "register_normal": "Rekisteröidy sähköpostilla"
+    },
+
+    "professions": [
+        {"id": "1",   "title": "johtotehtävissä"},
+        {"id": "21",  "title": "tekniikan ja luonnontieteiden erityisasiantuntija"},
+        {"id": "22",  "title": "vaativissa terveydenhoidon tehtävissä"},
+        {"id": "23",  "title": "opetustehtävissä"},
+        {"id": "24",  "title": "liike-elämän tai hallinnon erityisasiantuntija"},
+        {"id": "25",  "title": "tieto- ja viestintäteknologian erityisasiantuntija"},
+        {"id": "261", "title": "lakialan erityisasiantuntija"},
+        {"id": "262-263-264-265", "title": "haastavissa sosiaali- ja kulttuurialan tehtävissä"},
+        {"id": "3",   "title": "asiantuntijan roolissa"},
+        {"id": "32",  "title": "terveydenhoito tai hoivatehtävissä"},
+        {"id": "4",   "title": "toimistotyöntekijä"},
+        {"id": "5",   "title": "palvelualan työntekijä"},
+        {"id": "52",  "title": "myyntitehtävissä"},
+        {"id": "6",   "title": "maa- ja metsätaloustyöntekijä"},
+        {"id": "7",   "title": "rakennus-, korjaus tai tuotantotöissä"},
+        {"id": "74",  "title": "sähkö- ja elektroniikkatöissä"},
+        {"id": "8",   "title": "kuljetus- tai prosessityötekijä"},
+        {"id": "9",   "title": "fyysisen työnteon tekijä"},
+        {"id": "X",   "title": "yrittäjä"}
+    ],
+
+    "areas": [
+        {"id": "Uusimaa",           "title": "Uudenmaan"},
+        {"id": "Kymenlaakso",       "title": "Kymenlaakson"},
+        {"id": "Etelä-Karjala",     "title": "Etelä-Karjalan"},
+        {"id": "Etelä-Savo",        "title": "Etelä-Savon"},
+        {"id": "Pohjois-Karjala",   "title": "Pohjois-Karjalan"},
+        {"id": "Pohjois-Savo",      "title": "Pohjois-Savon"},
+        {"id": "Keski-Suomi",       "title": "Keski-Suomen"},
+        {"id": "Päijät-Häme",       "title": "Päijät-Hämeen"},
+        {"id": "Varsinais-Suomi",   "title": "Varsinais-Suomen"},
+        {"id": "Pirkanmaa",         "title": "Pirkanmaan"},
+        {"id": "Satakunta",         "title": "Satakunnan"},
+        {"id": "Kanta-Häme",        "title": "Kanta-Hämeen"},
+        {"id": "Pohjois-Pohjanmaa", "title": "Pohjois-Pohjanmaan"},
+        {"id": "Lappi",             "title": "Lapin"},
+        {"id": "Kainuu",            "title": "Kainuun"},
+        {"id": "Keski-Pohjanmaa",   "title": "Keski-Pohjanmaan"},
+        {"id": "Pohjanmaa",         "title": "Pohjanmaan"},
+        {"id": "Etelä-Pohjanmaa",   "title": "Etelä-Pohjanmaan"},
+        {"id": "Ahvenanmaa",        "title": "Ahvenanmaan"}
+    ],
+
+    "browser_nag": {
+        "title": "Selaimesi on vanhentunut!",
+        "description": "Vanhentuneen selaimen käyttö Internetissä on vakava tietoturvauhka. Päivitä selaimesi, niin voit jatkaa palvelun käyttöä.",
+        "readmore_button": "Lisätietoa",
+        "readmore_link": "http://outdatedbrowser.com/"
+    },
+
+    "autocomplete": {
+        "keywords": [
+            "javascript",
+            "php",
+            "mysql"
+        ],
+        "degrees": [
+            "Eläinlääketieteen kandidaatti",
+            "Eläinlääketieteen lisensiaatti",
+            "Eläinlääketieteen tohtori",
+            "Farmaseutti",
+            "Proviisori",
+            "Farmasian lisensiaatti",
+            "Farmasian tohtori",
+            "Hammaslääketieteen kandidaatti",
+            "Hammaslääketieteen lisensiaatti",
+            "Hammaslääketieteen tohtori",
+            "Humanististen tieteiden kandidaatti",
+            "Filosofian maisteri",
+            "Filosofian lisensiaatti",
+            "Filosofian tohtori",
+            "Kasvatustieteen kandidaatti",
+            "Kasvatustieteen maisteri",
+            "Kasvatustieteen lisensiaatti",
+            "Kasvatustieteen tohtori",
+            "Kauppatieteen kandidaatti",
+            "Kauppatieteen maisteri",
+            "Kauppatieteen lisensiaatti",
+            "Kaupatieteen tohtori",
+            "Kuvataiteen kandidaatti",
+            "Kuvataiteen maisteri",
+            "Kuvataiteen tohtori",
+            "Liikuntatieteiden kandidaatti",
+            "Liikuntatieteiden maisteri",
+            "Liikunatieteiden lisensiaatti",
+            "Liikuntatieteiden tohtori",
+            "Luonnontieteiden kandidaatti",
+            "Lääketieteen kandidaatti",
+            "Laaketieteen lisensiaatti",
+            "Lääketieteen tohtori",
+            "Elinterviketieteiden kandidaatti",
+            "Maatalous- ja metsätieteiden kandidaatti",
+            "Elinarviketieteiden maisteri",
+            "Maatalous- ja metsätieteiden maisteri",
+            "Elintarviketieteiden lisensiaatti",
+            "Maatalous- ja metsätieteiden lisensiaatti",
+            "Elintarviketieteiden tohtori",
+            "Maatalous- ja metsätieteiden tohtori",
+            "Musiikin kandidaatti",
+            "Musiikin maisteri",
+            "Musiikin lisensiaatti",
+            "Musiikin tohtori",
+            "Oikeusnotaari",
+            "Oikeustieteen maisteri",
+            "Kansainvälisen ja vertailevan oikeustieteen maisteri",
+            "Oikeustieteen lisensiaatti",
+            "Oikeustieteen tohtori",
+            "Psykologian kandidaatti",
+            "Psykologian maisteri",
+            "Psykologian lisensiaatti",
+            "Psykologian tohtori",
+            "Taiteen kandidaatti",
+            "Taiteen maisteri",
+            "Taiteen tohtori",
+            "Tanssitaiteen kandidaatti",
+            "Tanssitaiteen maisteri",
+            "Tanssitaiteen lisensiaatti",
+            "Tanssitaiteen tohtori",
+            "Tekniikan kandidaatti",
+            "Arkkitehti",
+            "Diplomi-insinööri",
+            "Maisema-arkkitehti",
+            "Tekniikan lisensiaatti",
+            "Tekniikan tohtori",
+            "Teologian kandidaatti",
+            "Teologian maisteri",
+            "Teologian lisesiaatti",
+            "Teologian tohtori",
+            "Hallintotieteiden kandidaatti",
+            "Valtiotieteiden kandidaatti",
+            "Yhteiskuntatieteiden kandidaati",
+            "Hallintotieteiden maisteri",
+            "Valtiotieteiden maisteri",
+            "Yhteiskuntatieteiden maisteri",
+            "Hallintotieteiden lisensiaatti",
+            "Valtiotieteiden lisensiaatti",
+            "Yhteiskuntatieteiden lisensiaatti",
+            "Hallintotieteiden tohtori",
+            "Valtiotieteiden tohtori",
+            "Yhteiskuntatieteiden tohtori",
+            "Viittomakielentulkki",
+            "Yhteisöpedagogi",
+            "Artenomi",
+            "Kulttuurituottaja",
+            "Kuvataiteilija",
+            "Konservaattori ",
+            "Medianomi",
+            "Muotoilija",
+            "Musiikkipedagogi",
+            "Muusikko",
+            "Tanssin opettaja",
+            "Teatteri-ilmaisun ohjaaja",
+            "Vestonomi",
+            "Tradenomi",
+            "Insinööri",
+            "Laboratorioanalyytikko",
+            "Merikapteeni",
+            "Agrologi",
+            "Hortonomi",
+            "Iktyonomi",
+            "Metsätalousinsinööri",
+            "Ympäristösuunnittelija",
+            "Apuvälineteknikko",
+            "Bioanalyytikko",
+            "Ensihoitaja",
+            "Fysioterapeutti",
+            "Hammasteknikko",
+            "Jalkaterapeutikko",
+            "Kuntoutuksen ohjaaja",
+            "Kätilö",
+            "Naprapaatti",
+            "Optometristi",
+            "Osteopaatti",
+            "Röntgenhoitaja",
+            "Sairaanhoitaja",
+            "Suuhygienisti",
+            "Terveydenhoitaja",
+            "Toimintaterapeutti",
+            "Geronomi",
+            "Sosionomi",
+            "Estonomi",
+            "Liikunnanohjaaja",
+            "Restonomi",
+            "Karjatalouden perustutkinto",
+            "Tieto- ja viestintätekniikan perustutkinto",
+            "Tietojenkäsittelyn perustutkinto",
+            "Tietokoneasentajan perustutkinto",
+            "Tietokoneyliasentajan perustutkinto",
+            "Tietoliikenneasentajan perustutkinto",
+            "Tietoliikenneyliasentajan perustutkinto",
+            "Tullialan  perustutkinto",
+            "Tuotekehittäjän  perustutkinto",
+            "Turkkurimestarin perustutkinto",
+            "Turkkurin perustutkinto",
+            "Turvallisuusalan perustutkinto",
+            "Turvallisuusvalvojan perustutkinto",
+            "Tuulivoima-asentajan perustutkinto",
+            "Työvalmennuksen perustutkinto",
+            "Työvälinemestarin perustutkinto",
+            "Työvälinevalmistajan perustutkinto",
+            "Ulkomaankaupan perustutkinto",
+            "Vaatetusalan perustutkinto",
+            "Valajamestarin perustutkinto",
+            "Valajan perustutkinto",
+            "Valmentajan perustutkinto",
+            "Valokuvaajan perustutkinto",
+            "Valumallimestarin perustutkinto",
+            "Valumallin valmistajan perustutkinto",
+            "Vammaisten opiskelijoiden valmentava ja kuntouttava opetus ja ohjaus ammatillisessa peruskoulutuksessa perustutkinto",
+            "Vanhustyön perustutkinto",
+            "Varaosamyyjän perustutkinto",
+            "Varastoalan perustutkinto",
+            "Vartijan perustutkinto",
+            "Veneenrakennuksen perustutkinto",
+            "Veneenrakentajan perustutkinto",
+            "Venemestarin perustutkinto",
+            "Verhoilijamestarin perustutkinto",
+            "Verhoilijan  perustutkinto",
+            "Verhoilu- ja sisustusalan perustutkinto",
+            "Verhoilualan perustutkinto",
+            "Vesihuoltoalan perustutkinto",
+            "Viestinvälitys- ja logistiikkapalvelujen  perustutkinto",
+            "Vihersisustajan perustutkinto",
+            "Viinintuotannon perustutkinto",
+            "Viittomakielisen ohjauksen perustutkinto",
+            "Viljelijän perustutkinto",
+            "Viljelypuutarhurin perustutkinto",
+            "Virastomestarin perustutkinto",
+            "Voimalaitoksen käyttäjän perustutkinto",
+            "Välinehuoltajan perustutkinto",
+            "Yhdistelmäajoneuvonkuljettjan  perustutkinto",
+            "Ympäristöalan perustutkinto",
+            "Ympäristöhuollon perustutkinto",
+            "Yrittäjän perustutkinto",
+            "Yritysjohtamisen  perustutkinto",
+            "Yritysneuvojan perustutkinto",
+            "Ajoneuvonosturinkuljettajan ammattitutkinto",
+            "Ammattisukeltajan ammattitutkinto",
+            "Arboristin  ammattitutkinto",
+            "Aseseppäkisällin ammattitutkinto",
+            "Aseseppämestarin ammattitutkinto",
+            "Asiakirjahallinnon ja arkistotoimen ammattitutkinto",
+            "Asioimistulkin ammattitutkinto",
+            "Audiovisuaalisen viestinnän ammattitutkinto",
+            "Autoalan ammattitutkinto",
+            "Autoalan myyjän ammattitutkinto",
+            "Autoalan työnjohdon  ammattitutkinto",
+            "Autokorimekaanikon ammattitutkinto",
+            "Autokorimestarin ammattitutkinto",
+            "Automaalarimestarin ammattitutkinto",
+            "Automaalarin ammattitutkinto",
+            "Automaatioasentajan ammattitutkinto",
+            "Automaatioyliasentajan  ammattitutkinto",
+            "Automekaanikon ammattitutkinto",
+            "Automyyjän ammattitutkinto",
+            "Autosähkömekaanikon ammattitutkinto",
+            "Baarimestarin ammattitutkinto",
+            "Bioenergia-alan  ammattitutkinto",
+            "Catering-alan ammattitutkinto",
+            "Dieettikokin ammattitutkinto",
+            "Digitaalipainajan ammattitutkinto",
+            "Elektroniikka- ja sähköteollisuuden (nyk. Sähköteollisuuden) ammattitutkinto",
+            "Elektroniikka-asentajan  ammattitutkinto",
+            "Elektroniikkayliasentajan ammattitutkinto",
+            "Elintarvikealan ammattitutkinto",
+            "Elintarvikejalostajan ammattitutkinto",
+            "Elintarviketekniikan ammattitutkinto",
+            "Elintarviketeollisuuden ammattitutkinto",
+            "Eläintenhoitajan ammattitutkinto",
+            "Erä- ja luonto-oppaan ammattitutkinto",
+            "Faktorin ammattitutkinto",
+            "Floristimestarin ammattitutkinto",
+            "Floristin ammattitutkinto",
+            "Golfkenttämestarin ammattitutkinto",
+            "Golfkentänhoitajan ammattitutkinto",
+            "Hammastekniikan  ammattitutkinto",
+            "Henkilöautomekaanikon ammattitutkinto",
+            "Hevostalouden ammattitutkinto",
+            "Hevostenvalmentajan ammattitutkinto",
+            "Hierojan ammattitutkinto",
+            "Hissiasentajan ammattitutkinto",
+            "Hitsaajamestarin ammattitutkinto",
+            "Hitsaajan ammattitutkinto",
+            "Hiusalan ammattitutkinto",
+            "Hopeaseppämestarin ammattitutkinto",
+            "Hopeasepän ammattitutkinto",
+            "Hotelli- ja ravintola-alan ammattitutkinto",
+            "Hotelli-, ravintola- ja catering-alan ammattitutkinto",
+            "Hotelli-, ravintola- ja suurtalous(nyk. Majoitus- ja ravitsemisalan)esimiehen  ammattitutkinto",
+            "Hotellivirkailijan ammattitutkinto",
+            "Ilmastointiasentajan  ammattitutkinto",
+            "Ilmastointijärjestelmän puhdistajan ammattitutkinto",
+            "Informaatio- ja kirjastopalvelujen ammattitutkinto",
+            "Isännöinnin ammattitutkinto",
+            "Jalkinealan ammattitutkinto",
+            "Jalkojenhoidon ammattitutkinto",
+            "Johtamisen ammattitutkinto",
+            "Jälkikäsittelykoneenhoitajan ammattitutkinto",
+            "Kaivertajamestarin ammattitutkinto",
+            "Kaivertajan  ammattitutkinto",
+            "Kaivosalan ammattitutkinto",
+            "Kaivosalan  ammattitutkinto",
+            "Kalanjalostajan  ammattitutkinto",
+            "Kalanviljelijän ammattitutkinto",
+            "Kalastusoppaan ammattitutkinto",
+            "Kalatalouden  ammattitutkinto",
+            "Karjatalouden  ammattitutkinto",
+            "Kaukolämpöasentajan  ammattitutkinto",
+            "Kaukolämpöyliasentajan ammattitutkinto",
+            "Kauneudenhoitoalan ammattitutkinto",
+            "Kaupan esimiehen  ammattitutkinto",
+            "Kehitysvamma-alan  ammattitutkinto",
+            "Kello- ja mikromekaniikan ammattitutkinto",
+            "Kemiantekniikan ammattitutkinto",
+            "Kemianteollisuuden ammattitutkinto",
+            "Kengityssepän ammattitutkinto",
+            "Keramiikkakisällin ammattitutkinto",
+            "Keramiikkamestarin ammattitutkinto",
+            "Keruutuotetarkastajan (nyk. Luonnontuotealan) ammattitutkinto",
+            "Kiinteistönhoitajan ammattitutkinto",
+            "Kiinteistönvälitysalan ammattitutkinto",
+            "Kiinteistöpalvelujen ammattitutkinto",
+            "Kipsausalan  ammattitutkinto",
+            "Kipsimestarin ammattitutkinto",
+            "Kirjansitojamestarin ammattitutkinto",
+            "Kirjansitojan  ammattitutkinto",
+            "Kiskoliikenteen turvalaiteasentajan ammattitutkinto",
+            "Kivimiehen ammattitutkinto",
+            "Kiviseppäkisällin ammattitutkinto",
+            "Kiviseppämestarin ammattitutkinto",
+            "Koe-eläintenhoitajan ammattitutkinto",
+            "Kondiittorimestarin  ammattitutkinto",
+            "Kondiittorin  ammattitutkinto",
+            "Kone- ja metallialan ammattitutkinto",
+            "Koneenasentajamestarin ammattitutkinto",
+            "Koneenasentajan ammattitutkinto",
+            "Koneistajamestarin ammattitutkinto",
+            "Koneistajan ammattitutkinto",
+            "Konesitojamestarin ammattitutkinto",
+            "Korroosionestomaalarin ammattitutkinto",
+            "Kosmetologin (nyk. Kauneudenhoitoalan) ammattitutkinto",
+            "Kotitalous- ja kuluttajapalvelujen ammattitutkinto",
+            "Kotitalouskoneasentajan ammattitutkinto",
+            "Kotitalousopetus (talouskoulu) ammattitutkinto",
+            "Kotityö- ja puhdistuspalvelujen ammattitutkinto",
+            "Kotityöpalvelujen ammattitutkinto",
+            "Koululaisten aamu- ja iltapäivätoiminnan ohjaajan  ammattitutkinto",
+            "Koulunkäynnin ja aamu- ja iltapäivätoiminnan ohjauksen ammattitutkinto",
+            "Koulunkäyntiavustajan ammattitutkinto",
+            "Kultaajakisällin  ammattitutkinto",
+            "Kultaajamestarin  ammattitutkinto",
+            "Kultaseppämestarin ammattitutkinto",
+            "Kultasepän ammattitutkinto",
+            "Kumialan ammattitutkinto",
+            "Kunnossapidon ammattitutkinto",
+            "Kuvallisen ilmaisun ammattitutkinto",
+            "Kylmäasentajan ammattitutkinto",
+            "Kylmämestarin ammattitutkinto",
+            "Käsi- ja taideteollisuusalan ammattitutkinto",
+            "Käsityömestarin ammattitutkinto",
+            "Käsityönteknijän ammattitutkinto",
+            "Laboratorioalan ammattitutkinto",
+            "Laitoshuoltajan ammattitutkinto",
+            "Laivanrakennusalan ammattitutkinto",
+            "Laivanrakentajan ammattitutkinto",
+            "Laivasähkömestarin ammattitutkinto",
+            "Lapsi- ja perhetyön ammattitutkinto",
+            "Lasikeraamisen alan ammattitutkinto",
+            "Lasinpuhaltajakisällin ammattitutkinto",
+            "Lasinpuhaltajamestarin ammattitutkinto",
+            "Lasten ja nuorten erityisohjaajan ammattitutkinto",
+            "Lastinkäsittelyalan ammattitutkinto",
+            "Lattiamestarin ammattitutkinto",
+            "Lattianpäällystäjän ammattitutkinto",
+            "Laukku- ja nahka-alan ammattitutkinto",
+            "Laukku- ja nahkamestarin ammattitutkinto",
+            "Leipomoteollisuuden ammattitutkinto",
+            "Leipurimestarin  ammattitutkinto",
+            "Leipurin  ammattitutkinto",
+            "Lennonjohdon  ammattitutkinto",
+            "Lentoasemapalvelujen ammattitutkinto",
+            "Lentokonetekniikan ammattitutkinto",
+            "Lentokoneasennuksen ammattitutkinto",
+            "Levyalan  ammattitutkinto",
+            "Levymestarin  ammattitutkinto",
+            "Levytekniikan  ammattitutkinto",
+            "Levytyömestarin ammattitutkinto",
+            "Lihanjalostajan ammattitutkinto",
+            "Lihantarkastuksen  ammattitutkinto",
+            "Lihateollisuuden ammattitutkinto",
+            "Liikenne-esimiehen ammattitutkinto",
+            "Liikenneopettajan ammattitutkinto",
+            "Liiketalouden  ammattitutkinto",
+            "Liikunnan ammattitutkinto",
+            "Liikunnanohjauksen ammattitutkinto",
+            "Liikuntapaikkamestarin ammattitutkinto",
+            "Liikuntapaikkojen hoitajan ammattitutkinto",
+            "Linja-autonkuljettajan  ammattitutkinto",
+            "Logistiikan ammattitutkinto",
+            "Lukkoseppämestarin ammattitutkinto",
+            "Lukkosepän  ammattitutkinto",
+            "Luonnonmukaisen tuotannon ammattitutkinto",
+            "Luonnontieteellisen alan konservoinnin ammattitutkinto",
+            "Luonnontuotealan (e. Keruutuotetarkastajan) ammattitutkinto",
+            "Luonto- ja ympäristöalan ammattitutkinto",
+            "Luontokartoittajan ammattitutkinto",
+            "Lämmityslaiteasentajan  ammattitutkinto",
+            "Lääkealan ammattitutkinto",
+            "Maahanmuuttajien ammatilliseen peruskoulutukseen valmistava koulutus ammattitutkinto",
+            "Maalarimestarin ammattitutkinto",
+            "Maalarin ammattitutkinto",
+            "Maanmittausalan ammattitutkinto",
+            "Maaseudun kehittäjän ammattitutkinto",
+            "Maaseudun vesitalouden ammattitutkinto",
+            "Maaseutumatkailun ammattitutkinto",
+            "Maatalousalan ammattitutkinto",
+            "Maatalouskoneasentajan  ammattitutkinto",
+            "Maidonjalostajan ammattitutkinto",
+            "Majoitus- ja ravitsemisalan (e. Hotelli-, ravintola- ja suurtalous) esimiehen ammattitutkinto",
+            "Ajojärjestelijän  erikoisammattitutkinto",
+            "Mallinrakentajakisällin erikoisammattitutkinto",
+            "Mallinrakentajamestarin erikoisammattitutkinto",
+            "Markkinointiviestinnän  erikoisammattitutkinto",
+            "Matkailualan erikoisammattitutkinto",
+            "Matkailun ohjelmapalvelujen erikoisammattitutkinto",
+            "Matkaoppaan erikoisammattitutkinto",
+            "Matkatoimistovirkailijan erikoisammattitutkinto",
+            "Mehiläistarhaajan erikoisammattitutkinto",
+            "Meijeriteollisuuden erikoisammattitutkinto",
+            "Merenkulkualan erikoisammattitutkinto",
+            "Metallien jalostuksen erikoisammattitutkinto",
+            "Metsäalan erikoisammattitutkinto",
+            "Metsäkoneasentajan erikoisammattitutkinto",
+            "Metsäkoneenkuljettajan erikoisammattitutkinto",
+            "Metsäkoneenkuljettajan (nyk. Puunkorjuun) erikoisammattitutkinto",
+            "Metsämestarin erikoisammattitutkinto",
+            "Metsätalouden  erikoisammattitutkinto",
+            "Metsätalousyrittäjän erikoisammattitutkinto",
+            "Mittaajan ja kalibroijan erikoisammattitutkinto",
+            "Muovi- ja kumitekniikan erikoisammattitutkinto",
+            "Muovimekaanikon erikoisammattitutkinto",
+            "Muovitekniikan erikoisammattitutkinto",
+            "Musiikkialan  erikoisammattitutkinto",
+            "Myynnin erikoisammattitutkinto",
+            "Nahanvalmistajamestarin erikoisammattitutkinto",
+            "Nahanvalmistajan erikoisammattitutkinto",
+            "Nuohoojamestarin erikoisammattitutkinto",
+            "Nuohoojan erikoisammattitutkinto",
+            "Nuoriso- ja vapaa-ajan ohjauksen erikoisammattitutkinto",
+            "Näkövammaistaitojen ohjaajan erikoisammattitutkinto",
+            "Obduktiopreparaattorin erikoisammattitutkinto",
+            "Oikeustulkin erikoisammattitutkinto",
+            "Optiikkahiojan erikoisammattitutkinto",
+            "Painajamestarin/rotaatiomestarin erikoisammattitutkinto",
+            "Painajan  erikoisammattitutkinto",
+            "Painopinnanvalmistajan erikoisammattitutkinto",
+            "Painoviestinnän erikoisammattitutkinto",
+            "Paperiteollisuuden erikoisammattitutkinto",
+            "Perhepäivähoitajan erikoisammattitutkinto",
+            "Pesulateknikon erikoisammattitutkinto",
+            "Pienkonemekaanikon erikoisammattitutkinto",
+            "Pintakäsittelyalan erikoisammattitutkinto",
+            "Pintakäsittelymestarin erikoisammattitutkinto",
+            "Porotalouden  erikoisammattitutkinto",
+            "Prosessiteollisuuden  erikoisammattitutkinto",
+            "Psykiatrisen hoidon erikoisammattitutkinto",
+            "Puhdistuspalvelujen erikoisammattitutkinto",
+            "Puhevammaisten tulkin erikoisammattitutkinto",
+            "Puistomestarin erikoisammattitutkinto",
+            "Puistopuutarhurin erikoisammattitutkinto",
+            "Putkiasentajan  erikoisammattitutkinto",
+            "Puualan erikoisammattitutkinto",
+            "Puunkorjuun erikoisammattitutkinto",
+            "Puusepänalan erikoisammattitutkinto",
+            "Puutarhatalouden erikoisammattitutkinto",
+            "Puutavaran autokuljetuksen erikoisammattitutkinto",
+            "Päihdetyön erikoisammattitutkinto",
+            "Päivähoitajan erikoisammattitutkinto",
+            "Rahoitus- ja vakuutusalan erikoisammattitutkinto",
+            "Rakennusalan erikoisammattitutkinto",
+            "Rakennusalan työmaapäällikön erikoisammattitutkinto",
+            "Rakennuspeltiseppämestarin  erikoisammattitutkinto",
+            "Rakennuspeltisepän  erikoisammattitutkinto",
+            "Rakennustuotannon erikoisammattitutkinto",
+            "Rakennustuotealan erikoisammattitutkinto",
+            "Raskaskalustomekaanikon  erikoisammattitutkinto",
+            "Ratsastuksenopettajan erikoisammattitutkinto",
+            "Rautatiekaluston kunnossapidon erikoisammattitutkinto",
+            "Ravintolakokin erikoisammattitutkinto",
+            "Rengasalan erikoisammattitutkinto",
+            "Restaurointikisällin erikoisammattitutkinto",
+            "Restaurointimestarin erikoisammattitutkinto",
+            "Riistamestarin erikoisammattitutkinto",
+            "Romanikulttuurin ohjaajan erikoisammattitutkinto",
+            "Rotaatiomestarin erikoisammattitutkinto",
+            "Ruokamestarin erikoisammattitutkinto",
+            "Rytmimusiikkituotannon erikoisammattitutkinto",
+            "Saamenkäsityökisällin erikoisammattitutkinto",
+            "Saamenkäsityömestarin erikoisammattitutkinto",
+            "Saha-alan   erikoisammattitutkinto",
+            "Sahamestarin erikoisammattitutkinto",
+            "Sairaankuljettajan erikoisammattitutkinto",
+            "Seminologin erikoisammattitutkinto",
+            "Seppäkisällin erikoisammattitutkinto",
+            "Seppämestarin erikoisammattitutkinto",
+            "Sihteerin erikoisammattitutkinto",
+            "Siivousteknikon erikoisammattitutkinto",
+            "Siivoustyönohjaajan erikoisammattitutkinto",
+            "Sirkusalan erikoisammattitutkinto",
+            "Sisustusalan  erikoisammattitutkinto",
+            "Sivunvalmistajamestarin erikoisammattitutkinto",
+            "Soitinrakentajakisällin  erikoisammattitutkinto",
+            "Soitinrakentajamestarin  erikoisammattitutkinto",
+            "SORA - Opiskeluun soveltumattomuuden ratkaisuja erikoisammattitutkinto",
+            "Sosiaali- ja terveysalan erikoisammattitutkinto",
+            "Suntion erikoisammattitutkinto",
+            "Suunnitteluassistentin erikoisammattitutkinto",
+            "Suunnitteluassistentin  erikoisammattitutkinto",
+            "Suurtalouskokin erikoisammattitutkinto",
+            "Sähkö- ja automaatiotekniikan erikoisammattitutkinto",
+            "Sähköalan erikoisammattitutkinto",
+            "Sähköasentajan erikoisammattitutkinto",
+            "Sähkölaitosasentajan erikoisammattitutkinto",
+            "Sähköteollisuuden (e. Elektroniikka- ja sähköteollisuuden) erikoisammattitutkinto",
+            "Sähköverkkoalan  erikoisammattitutkinto",
+            "Sähköverkkoasentajan erikoisammattitutkinto",
+            "Sähköyliasentajan erikoisammattitutkinto",
+            "Taimistomestarin erikoisammattitutkinto",
+            "Tallimestarin erikoisammattitutkinto",
+            "Talonrakennusalan  erikoisammattitutkinto",
+            "Talotekniikan erikoisammattitutkinto",
+            "Taloushallinnon  erikoisammattitutkinto",
+            "Tanssialan erikoisammattitutkinto",
+            "Tarhaajamestarin erikoisammattitutkinto",
+            "Tarjoilijan erikoisammattitutkinto",
+            "Teatterialan erikoisammattitutkinto",
+            "Tekniikan erikoisammattitutkinto",
+            "Teknisen eristäjän  erikoisammattitutkinto",
+            "Teknisen piirtäjän erikoisammattitutkinto",
+            "Tekstiili- ja vaatetusalan erikoisammattitutkinto",
+            "Tekstiilialan erikoisammattitutkinto",
+            "Tekstiilihuollon erikoisammattitutkinto",
+            "Teollisen pintakäsittelijän erikoisammattitutkinto",
+            "Teollisuusputkiasentajan erikoisammattitutkinto",
+            "Tieto- ja kirjastopalvelujen erikoisammattitutkinto",
+            "Tieto- ja tietoliikennetekniikan erikoisammattitutkinto"
+        ]
+    }
+}

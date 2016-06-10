@@ -65,7 +65,7 @@ class UserController extends BaseController {
         {
             $privacy = UserPrivacy::where('profile_token', '=', $profileToken)->firstOrFail();
             if($privacy->public_profile == false)
-                return Response::make('Bad request!', '400'); 
+                return Response::make('Bad request!', '400');
             $user = User::find($privacy->user_id);
             $userData = $user->getFullProfileAsArray();
             $publicData = array();
@@ -94,7 +94,7 @@ class UserController extends BaseController {
     public function login()
     {
         $email = Input::get('email', '');
-        $password = Input::get('password', '');       
+        $password = Input::get('password', '');
         $remember_me = Input::get('remember_me', false);
 
         if (Auth::attempt(array('email' => $email, 'password' => $password), $remember_me)) {
@@ -125,7 +125,7 @@ class UserController extends BaseController {
             Log::info('User <' . $user->email . '> has logged out.');
         }
         Session::forget('linkedIn');
-        return Response::json(array('status' => 'ok')); 
+        return Response::json(array('status' => 'ok'));
     }
 
     /**
@@ -143,7 +143,7 @@ class UserController extends BaseController {
             DB::beginTransaction();
             $user = User::where('email', '=', Input::get('email'))->first();
             if(empty($user)) {
-               return Response::json(array('status' => 'ok')); 
+               return Response::json(array('status' => 'ok'));
             }
             $newPass = str_random(8);
             $user->password = Hash::make($newPass);
@@ -156,7 +156,7 @@ class UserController extends BaseController {
             });
 
             DB::commit();
-            return Response::json(array('status' => 'ok')); 
+            return Response::json(array('status' => 'ok'));
         }
         catch (Exception $e)
         {
@@ -230,7 +230,7 @@ class UserController extends BaseController {
 
 
     /**
-     * Register user to the service and login if everything went well 
+     * Register user to the service and login if everything went well
      *
      * @return json
      */
@@ -238,7 +238,7 @@ class UserController extends BaseController {
 
         $headers = getallheaders();
         if(!isset($headers['MazhrSession']))
-            return Response::make('Unauthorized', '400');
+            return Response::make('Unauthorized 400');
 
         $tkey = $headers['MazhrSession'];
         $session = MazhrSession::get($tkey);
@@ -255,7 +255,7 @@ class UserController extends BaseController {
             {
                 $session->delete();
                 $token = JWTAuth::fromUser($user);
-                return Response::json(MzrRestResponse::get(array('mazhr_token' => $token), $user->getFullProfileAsArray()));            
+                return Response::json(MzrRestResponse::get(array('mazhr_token' => $token), $user->getFullProfileAsArray()));
             }
         }
 
@@ -288,7 +288,7 @@ class UserController extends BaseController {
             else
             {
                 $rules['pass1'] = 'required|min:6';
-                $rules['pass2'] = 'required|min:6';     
+                $rules['pass2'] = 'required|min:6';
             }
 
             $validator = Validator::make(Input::all(), $rules);
@@ -299,7 +299,7 @@ class UserController extends BaseController {
                 return Response::make($validator->messages(), '400');
             } else {
 
-                try{ 
+                try{
                     DB::beginTransaction();
 
                     // save basic user data
@@ -322,7 +322,7 @@ class UserController extends BaseController {
                     }
 
                     $user->save();
-                    
+
                     // User exra
                     $data = new stdClass();
                     if(!empty($user->email))
@@ -338,7 +338,7 @@ class UserController extends BaseController {
 
                     // save work history from Linkedid
                     if($hasSession){
-                        if($sessionData->positions->_total != 0) {  
+                        if($sessionData->positions->_total != 0) {
                             $this->populateLnWorkHistory($user->id, $sessionData->positions->values);
                         }
                         //user image
@@ -366,7 +366,7 @@ class UserController extends BaseController {
                     $session->delete();
                     $token = JWTAuth::fromUser($user);
                     return Response::json(MzrRestResponse::get(array('mazhr_token' => $token), $user->getFullProfileAsArray()));
-                    
+
                 } catch (Exception $e) {
                     DB::rollback();
                     Log::warning('User <'. Input::get('email') .'> registration failed: ' . $e->getMessage() . '\n\n' . $e->getTraceAsString());
@@ -399,13 +399,13 @@ class UserController extends BaseController {
         {
 
             // If we don't have an authorization code, get one
-            $url = $provider->getAuthorizationUrl();  
+            $url = $provider->getAuthorizationUrl();
             $newValue = $session->valueObject();
             // check for return urls and save them to session if found. Else use referer
             $newValue->ok_url = Input::has('ok_url') ? urldecode(Input::get('ok_url')) : Request::server('HTTP_REFERER');
             $newValue->fail_url = Input::has('fail_url') ? urldecode(Input::get('fail_url')) : Request::server('HTTP_REFERER');
             $session->saveValueObject($newValue);
-            return Redirect::to($url);         
+            return Redirect::to($url);
         }
         else
         {
@@ -441,10 +441,10 @@ class UserController extends BaseController {
                         }
                         $user->save();
 
-                        if($linkedIn->positions->_total != 0) { 
+                        if($linkedIn->positions->_total != 0) {
                             $this->populateLnWorkHistory($user->id, $linkedIn->positions->values);
                         }
-                       
+
 
                         //user image
                         if(empty($user->image) && isset($linkedIn->pictureUrls->values[0])) {
@@ -455,7 +455,7 @@ class UserController extends BaseController {
                             $user->image = $imgName;
                             $user->save();
                         }
-                        
+
 
                     } else {
 
@@ -464,7 +464,7 @@ class UserController extends BaseController {
                         if($registeredWithLinkedIn) {
                             $session->user_id = $registeredWithLinkedIn->id;
                             $session->save();
-                            $session->setValue('linkedinId', $linkedIn->id);                  
+                            $session->setValue('linkedinId', $linkedIn->id);
                         }
                         else
                         {
@@ -475,7 +475,7 @@ class UserController extends BaseController {
                             {
                                 $session->setValue('linkedin', $linkedIn);
                             }
-                            // Registered with same email address -> back with message  
+                            // Registered with same email address -> back with message
                             else if(count($sameMail) == 1)
                             {
                                 $session->setValue('message', 'linkedin_samemail');
@@ -491,11 +491,11 @@ class UserController extends BaseController {
 
             } catch (Exception $e) {
                 Log::warning('Unable to get access token: ' . $e->getMessage());
-                $session->setValue('message', 'linkedin_accesstokenfail');          
+                $session->setValue('message', 'linkedin_accesstokenfail');
             }
         }
         return Redirect::to($returnUrl);
-    }   
+    }
 
     /**
      * Get all users
@@ -520,7 +520,7 @@ class UserController extends BaseController {
      * @return json
      */
     public function updateUser($node = null)
-    {       
+    {
 
         $request = Request::instance();
         $content = json_decode($request->getContent());
@@ -555,7 +555,7 @@ class UserController extends BaseController {
                     }
 
                     $originalName = $image->getClientOriginalName();
-                    $ext = pathinfo($originalName, PATHINFO_EXTENSION); 
+                    $ext = pathinfo($originalName, PATHINFO_EXTENSION);
                     $name = User::imageName($ext);
                     $image->move('uploads', $name);
                     $newImage = Image::make('uploads/' . $name)->fit(512)->save();
@@ -572,13 +572,13 @@ class UserController extends BaseController {
                                 $user->$key = $value;
                                 $changed[] = $key;
                             }
-                        }   
+                        }
                     }
                 }
 
                 $user->save();
                 $response = MzrRestResponse::get(array('changed' => $changed), $user->getFullProfileAsArray());
-                return Response::json($response);               
+                return Response::json($response);
             }
             // update nodes
             else
@@ -647,7 +647,7 @@ class UserController extends BaseController {
      * @return json
      */
     public function deleteFromNode($node = null, $id = null)
-    {       
+    {
         if(empty($node) || empty($id)) return Response::make('Missing input!', '400');
 
         try
@@ -687,7 +687,7 @@ class UserController extends BaseController {
                     return Response::json($response);
 
                 default:
-                    return Response::make('Wrong node!', '400');    
+                    return Response::make('Wrong node!', '400');
             }
         }
         catch (Exception $e)
@@ -734,7 +734,7 @@ class UserController extends BaseController {
             $workHistory->title = $position->title;
             $workHistory->company = $position->company->name;
             $workHistory->current = $position->isCurrent;
-            $workHistory->save();           
+            $workHistory->save();
         }
     }
 }

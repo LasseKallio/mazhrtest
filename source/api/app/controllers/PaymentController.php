@@ -54,7 +54,7 @@ class PaymentController extends BaseController {
             if($reseted && ($test->second_price > 0))
             {
                 $priceToPay = $test->second_price;
-            }            
+            }
 
 			// check for discounts
 			if(!empty($userTest->discount_code_id))
@@ -63,7 +63,7 @@ class PaymentController extends BaseController {
 				$priceToPay = $discount->price < $priceToPay ? $discount->price : $priceToPay;
 			}
 
-			// This test is free, no need to make the payment 
+			// This test is free, no need to make the payment
 			if($priceToPay == 0) {
 				$userTest->status = UserTest::TEST_PAID;
 				$userTest->save();
@@ -81,7 +81,7 @@ class PaymentController extends BaseController {
 			$orderNumber = $userTest->id . '-' . $test->instrument . '-' . $user->id;
 
 			if(PaymentLog::canProceed($orderNumber))
-			{	
+			{
 
 				$payment = new Paytrail_Module_Rest_Payment_S1($orderNumber, $urlset, $priceToPay);
 				$module = new Paytrail_Module_Rest($config['merchantId'], $config['merchantSecureCode']);
@@ -101,8 +101,8 @@ class PaymentController extends BaseController {
 				}
 				catch (Paytrail_Exception $pe) {
 		        	Log::warning('Unable ta start the payment: ' . $pe->getMessage());;
-	            	$mazhrSession->setValue('message', 'payment_startfail');	        	
-		        } catch (Exception $e) 
+	            	$mazhrSession->setValue('message', 'payment_startfail');
+		        } catch (Exception $e)
 				{
 		        	Log::warning('Payment logging failure: ' . $e->getMessage());
 	            	$mazhrSession->setValue('message', 'payment_logfail');
@@ -111,7 +111,7 @@ class PaymentController extends BaseController {
 	    	else
 	    	{
 				Log::info('Unfinished payment ('. $user->email .')');
-	            $mazhrSession->setValue('message', 'payment_unfinished');	    		
+	            $mazhrSession->setValue('message', 'payment_unfinished');
 	    	}
 
 		}
@@ -143,7 +143,7 @@ class PaymentController extends BaseController {
 	    	'TIMESTAMP' 		=> 'required',
 	    	'PAID'				=> 'required',
 	    	'METHOD'			=> 'required',
-	    	'RETURN_AUTHCODE' 	=> 'required',  
+	    	'RETURN_AUTHCODE' 	=> 'required',
 	    );
 
 	    $validator = Validator::make(Input::all(), $rules);
@@ -173,7 +173,7 @@ class PaymentController extends BaseController {
 				$paylog->save();
 
 				$mazhrSession->setValue('message', 'payment_success');
-							
+
 			} else {
 				$paylog->status = PaymentLog::PAYMENT_ERROR;
 				$paylog->save();
@@ -192,7 +192,7 @@ class PaymentController extends BaseController {
             $mazhrSession->setValue('message', 'payment_generalfail');
 		}
 
-		return Redirect::to($returnUrl);		
+		return Redirect::to($returnUrl);
 	}
     /**
      * Handle failed payment
@@ -202,11 +202,11 @@ class PaymentController extends BaseController {
 	{
 		$token = parseInputToken();
 		$mazhrSession = MazhrSession::get($token);
-		
+
 	    $rules = array(
 	    	'ORDER_NUMBER' 		=> 'required',
 	    	'TIMESTAMP' 		=> 'required',
-	    	'RETURN_AUTHCODE' 	=> 'required',  
+	    	'RETURN_AUTHCODE' 	=> 'required',
 	    );
 	    $returnUrl = Session::get('payment_return_url');
 	    $validator = Validator::make(Input::all(), $rules);
@@ -230,8 +230,8 @@ class PaymentController extends BaseController {
 			$test->save();
 			Log::info('Payment '. Input::get('ORDER_NUMBER') . ' has been cancelled!');
 			$mazhrSession->setValue('message', 'payment_cancelled');
-			return Redirect::to($returnUrl);	
-	    }		
+			return Redirect::to($returnUrl);
+	    }
 	}
     /**
      * Handle payment notify from Paytrail
@@ -247,7 +247,7 @@ class PaymentController extends BaseController {
 	    	'TIMESTAMP' 		=> 'required',
 	    	'PAID'				=> 'required',
 	    	'METHOD'			=> 'required',
-	    	'RETURN_AUTHCODE' 	=> 'required',  
+	    	'RETURN_AUTHCODE' 	=> 'required',
 	    );
 
 	    $validator = Validator::make(Input::all(), $rules);
@@ -281,7 +281,7 @@ class PaymentController extends BaseController {
 				} else if ($test->paid == UserTest::TEST_PAID) {
 					Log::info('Payment '. Input::get('ORDER_NUMBER') . 'is already paid!');
 				}
-							
+
 			} else {
 				$paylog->status = PaymentLog::PAYMENT_ERROR;
 				$paylog->save();
@@ -294,11 +294,11 @@ class PaymentController extends BaseController {
 			$paylog->status = PaymentLog::PAYMENT_SYSTEM_ERROR;
 			$paylog->save();
 			$test->status = UserTest::TEST_NEW;
-			$test->save();			
+			$test->save();
 			Log::warning('Payment failed ('. Input::get('ORDER_NUMBER') .'): ' . $e->getMessage());
 		}
 
-		return Response::make('Ok', '200');		
+		return Response::make('Ok', '200');
 	}
 	/**
 	* Payment log
@@ -341,7 +341,7 @@ class PaymentController extends BaseController {
 	    );
 
 	    $csv = toCsv($logData);
- 
+
     	return Response::make($csv, '200', $headers);
-	}		
+	}
 }

@@ -1,0 +1,21 @@
+{
+  "name": "mazhr-app",
+  "private": true,
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "modernizr": "~2.8.2",
+    "fastclick": "~1.0.3",
+    "font-awesome": "~4.2.0",
+    "pixeden-stroke-7-icon": "*",
+    "normalize.css": "~3.0.2",
+    "handlebars": "~2.0.0",
+    "sweetalert": "~0.4.1",
+    "jquery-ui": "~1.11.2",
+    "tag-it": "*",
+    "moment-timezone": "~0.3.0",
+    "moment": "~2.9.0",
+    "nprogress": "~0.1.6",
+    "jquery-placeholder": "~2.1.0",
+    "cropit": "~0.2.0"
+  }
+}

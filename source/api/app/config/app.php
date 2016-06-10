@@ -27,7 +27,7 @@ return array(
     */
 
     'url'       => 'http://api.mazhr.com',
- 
+
     /*
     |--------------------------------------------------------------------------
     | AadminURL
@@ -61,7 +61,7 @@ return array(
         'Cache-Control: no-store, no-cache, must-revalidate',
         array('Cache-Control: post-check=0, pre-check=0', false),
         'Pragma: no-cache'
-    ),    
+    ),
 
     /*
     |--------------------------------------------------------------------------

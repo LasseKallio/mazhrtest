@@ -1,0 +1,395 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>MAZHR</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=1050">
+    <link rel="shortcut icon" href="../favicon.ico">
+
+
+    <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+    <link rel="stylesheet" href="../bower_components/sweetalert/lib/sweet-alert.css" />
+    <link rel="stylesheet" href="../bower_components/nprogress/nprogress.css" />
+
+    <link rel="stylesheet" href="../bower_components/pixeden-stroke-7-icon/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link href='//fonts.googleapis.com/css?family=Raleway:400,700|Roboto:500,400,300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="../styles/main.css">
+    <script src="../bower_components/modernizr/modernizr.js"></script>
+
+    <style>
+
+      .sidebar .sidebar-profile .imagewrapper {
+        cursor: default;
+      }
+
+      .sidebar .sidebar-profile .imagewrapper:hover:after {
+        display: none;
+      }
+
+    </style>
+    <!--[if lte IE 8]>
+    <script type="text/javascript">
+      legacyBrowser = true;
+    </script>
+    <style type="text/css">
+      img {
+        display: none;
+      }
+      #browser-nag img {
+        display: inline-block;
+      }
+    </style>
+    <![endif]-->
+
+  </head>
+  <body>
+
+    <!-- Generic templates -->
+
+    <script id="content-browser-nag-template" type="text/x-handlebars-template">
+      <div class="wrapper">
+        <img src="../images/logo_transparent.png"/>
+        <h1>{{lang.browser_nag.title}}</h1>
+        <p>{{lang.browser_nag.description}}</p>
+        <a class="button" href="{{lang.browser_nag.readmore_link}}">{{lang.browser_nag.readmore_button}}</a>
+      </div>
+    </script>
+
+    <script id="menu-template" type="text/x-handlebars-template">
+      <div class="title-public">{{lang.public_title}}</div>
+    </script>
+
+    <script id="diagram-template" type="text/x-handlebars-template">
+      <div class="diagram active-{{value}}">
+        <div class="controller"></div>
+        <h2>{{text.title}}</h2>
+        <div class="diagramwrapper">
+          <div class="bar bar-1"></div>
+          <div class="bar bar-2"></div>
+          <div class="bar bar-3"></div>
+          <div class="bar bar-4"></div>
+          <div class="bar bar-5"></div>
+          <div class="bar bar-6"></div>
+        </div>
+        <!--div class="percentage"></div-->
+        <div class="text">{{text.description}}</div>
+      </div>
+    </script>
+
+    <script id="text-result-template" type="text/x-handlebars-template">
+      <div class="text-result">
+        <h2>{{text.title}}</h2>
+        <p>{{text.description}}</p>
+      </div>
+    </script>
+
+    <!-- Sidebar templates -->
+
+    <script id="content-sidebar-profile-template" type="text/x-handlebars-template">
+      <div id="sidebar-profile" class="sidebar-profile">
+        <section class="profile">
+
+          <h2 class="name">{{user.name}}</h2>
+
+          <div class="imagewrapper">
+            {{#if user.image}}
+            <img src="{{../user.image}}"/>
+            <div class="image" style="background-image: url('{{../user.image}}');"></div>
+            {{/if}}
+          </div>
+
+        </section>
+
+        <section id="text-results" class="text-results"></section>
+        <section id="profile-diagrams" class="profile-diagrams"></section>
+
+      </div>
+    </script>
+
+    <!-- Page templates -->
+
+    <script id="content-page-profile-template" type="text/x-handlebars-template">
+      <div id="page-profile" class="page-profile">
+        <div class="linecontainer bs">
+
+          <section class="summary editor" {{#if hidden_blocks.extras}}style="display: none;"{{/if}}>
+            <div class="row title">
+              <h1>{{lang.profile.title_summary}}</h1>
+            </div>
+            <div class="cf not-editing">
+              {{#if user.summary.interests}}<div class="row taglist">
+                <label>{{lang.profile.form.i_am_interested_in}}</label>
+                <ul class="keywords">
+                  {{#each user.summary.interests}}
+                  <li>{{this.name}}</li>
+                  {{/each}}
+                </ul>
+              </div>{{/if}}
+
+              {{#if user.summary.locations}}<div class="row taglist">
+                <label>{{lang.profile.form.location}}</label>
+                <ul class="keywords">
+                  {{#each user.summary.locations}}
+                  <li>{{this.name}}</li>
+                  {{/each}}
+                </ul>
+              </div>{{/if}}
+
+              {{#if user.summary.cards}}<div class="row taglist">
+                <label>{{lang.profile.form.i_have}}</label>
+                <ul class="keywords">
+                  {{#each user.summary.cards}}
+                  <li>{{this.name}}</li>
+                  {{/each}}
+                </ul>
+              </div>{{/if}}
+
+              {{#if user.summary.education_level}}
+              <div class="row taglist">
+                <label>{{lang.profile.form.my_highest_education}}</label>
+                <ul class="keywords">
+                  <li>{{user.summary.education_level.name}}</li>
+                </ul>
+              </div>
+              {{/if}}
+
+              {{#if user.summary.keywords_array}}<div class="row taglist">
+                <label>{{lang.profile.form.my_professional_keywords}}</label>
+                <ul class="keywords">
+                  {{#each user.summary.keywords_array}}
+                  <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>{{/if}}
+
+            </div>
+
+          </section>
+
+          <section class="education editor" {{#if hidden_blocks.education}}style="display: none;"{{/if}}>
+            <div class="row title">
+              <h1>{{lang.profile.title_education}}</h1>
+            </div>
+            {{#each user.education}}
+            <div class="row education" data-educationid="{{this.id}}">
+              <div class="cf not-editing">
+                <div class="text">
+                  <div class="title">{{degree}} &mdash; {{school}}</div>
+                  <div class="duration">{{duration_pretty}}</div>
+                </div>
+                <ul class="keywords">
+                  {{#each keywords_array}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+            {{/each}}
+
+          </section>
+
+          <section class="experience editor" {{#if hidden_blocks.workhistory}}style="display: none;"{{/if}}>
+            <div class="row title">
+              <h1>{{lang.profile.title_experience}}</h1>
+            </div>
+            {{#each user.positions}}
+            <div class="row position" data-positionid="{{this.id}}">
+              <div class="cf not-editing">
+                <div class="text">
+                  <div class="title">{{title}} &mdash; {{company}}</div>
+                  <div class="duration">{{start_pretty}} - {{end_pretty}} ({{duration_pretty}})</div>
+                </div>
+                <ul class="keywords">
+                  {{#each keywords_array}}
+                    <li>{{this}}</li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+            {{/each}}
+          </section>
+
+          <section class="skills editor" {{#if hidden_blocks.skills}}style="display: none;"{{/if}}>
+
+            <div class="row title">
+              <h1>{{lang.profile.title_skills}}</h1>
+            </div>
+
+            <div class="row text-and-keywords languages skill">
+
+              <div class="iconwrapper check-empty {{#ifNotEmpty user.languages}}not-empty{{/ifNotEmpty}}">
+                <label>{{lang.profile.skills_language}}</label>
+
+                {{#each user.languages}}
+
+                <div class="subrow cf language" data-languageid="{{this.id}}">
+                  <div class="cf not-editing">
+                    <div class="text">
+                      <span class="score">{{{score}}}</span> {{name}}
+                    </div>
+                    <ul class="keywords">
+                      {{#each keywords_array}}
+                      <li>{{this}}</li>
+                      {{/each}}
+                    </ul>
+                  </div>
+
+                </div>
+                {{/each}}
+
+              </div>
+            </div>
+
+            <div class="row text-and-keywords experience skill">
+
+              {{#if user.experience_shown}}
+              <div class="cf not-editing">
+                <div class="iconwrapper">
+                  <label>{{lang.profile.skills_experience}}</label>
+                  {{#each user.experience}}
+                  {{#if show}}
+
+                    <div class="subrow cf experience">
+                      <div class="text">
+                        {{../name}} &mdash; {{../years}}
+                      </div>
+                      <ul class="keywords">
+                        {{#each ../keywords_array}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                      </ul>
+                    </div>
+
+                  {{/if}}
+                  {{/each}}
+                </div>
+              </div>
+              {{/if}}
+
+            </div>
+
+            <div class="row text-and-keywords primary-experience skill">
+
+              {{#if user.primary_experience.shown}}
+              <div class="cf not-editing">
+                <div class="iconwrapper">
+                  <label>{{lang.profile.skills_primary_experience}}</label>
+                  <div class="subrow cf primary-experience">
+                    <div class="text">
+                      {{../user.primary_experience.name}} &mdash; {{../user.primary_experience.years}}
+                    </div>
+                    <ul class="keywords">
+                      {{#each ../user.primary_experience.keywords_array}}
+                      <li>{{this}}</li>
+                      {{/each}}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              {{/if}}
+
+            </div>
+          </section>
+
+          {{#if user.contact}}
+          <section class="contacts editor" {{#if hidden_blocks.extras}}style="display: none;"{{/if}}>
+
+            <div class="row title">
+              <h1>{{lang.profile.title_contacts}}</h1>
+            </div>
+            {{#each user.contact}}
+            <div class="row contact" data-key="{{field}}" data-id="{{id}}">
+              {{#if shown}}<div class="cf not-editing">
+                <div class="iconwrapper {{../field}}">
+                  <label class="short">{{../value}}</label>
+                  <ul class="keywords">
+                    {{#each ../keywords_array}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </div>
+              {{/if}}
+            </div>
+            {{/each}}
+            {{#each user.contact_links}}
+            <div class="row contact link" data-key="{{field}}" data-linkid="{{id}}">
+              <div class="cf not-editing">
+                <div class="iconwrapper {{field}}">
+                  <label class="short"><a href="{{value}}" target="_blank">{{value}}</a></label>
+                  <ul class="keywords">
+                    {{#each keywords_array}}
+                    <li>{{this}}</li>
+                    {{/each}}
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            {{/each}}
+          </section>
+          {{/if}}
+
+        </div>
+      </div>
+    </script>
+
+    <div id="loader">
+      <img class="border rotating" src="../images/logo_border.svg"/>
+      <img class="border" src="../images/logo_center.svg"/>
+    </div>
+
+    <div id="browser-nag" class="browser-nag" style="display: none;"></div>
+
+    <div id="app" class="container" style="display: none;">
+      <div id="sidebar" class="sidebar bs" >
+        <header>
+          <!--div class="languageselector">
+            <span class="language" role="change-language" data-locale="fi_fi">FI</span>
+            <span class="language" role="change-language" data-locale="sv_se">SE</span>
+          </div-->
+          <h1 class="title-main"><a href="https://www.mazhr.com"><img src="../images/logo_mazhr_horizontal_wtext.svg" alt="Mazhr"/></a></h1>
+        </header>
+        <div id="content-sidebar" class="content"></div>
+      </div>
+
+      <div id="main" class="main">
+        <div id="menu"></div>
+        <div id="content-page" class="content bs"></div>
+      </div> <!-- .main -->
+
+    </div>
+
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/fastclick/lib/fastclick.js"></script>
+    <script src="../bower_components/handlebars/handlebars.js"></script>
+    <script src="../bower_components/sweetalert/lib/sweet-alert.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="../bower_components/moment/moment.js"></script>
+    <script src="../bower_components/moment-timezone/builds/moment-timezone-with-data-2010-2020.js"></script>
+    <script src="../bower_components/nprogress/nprogress.js"></script>
+    <script src="../bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+
+    <script src="../bower_components/moment/locale/fi.js"></script>
+    <script src="../bower_components/moment/locale/en-gb.js"></script>
+    <script src="../bower_components/moment/locale/sv.js"></script>
+    <script src="../bower_components/tag-it/js/tag-it.js"></script>
+
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js ../scripts/profile.js -->
+    <script src="../scripts/profile.js"></script>
+    <!-- endbuild -->
+
+</body>
+</html>

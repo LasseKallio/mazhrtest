@@ -1,0 +1,14 @@
+{
+  "name": "dev",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass-official": "~3.1.0",
+    "jquery": "~1.11.0",
+    "handlebars": "~2.0.0",
+    "datetimepicker": "~2.4.1",
+    "moment": "~2.9.0",
+    "jqueryui": "~1.11.4",
+    "jquery-ui": "~1.11.4"
+  },
+  "devDependencies": {}
+}

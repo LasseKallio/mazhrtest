@@ -1,4 +1,7 @@
 .DS_Store
 .idea/
 .vagrant/
-api/vendor
+source/api/vendor
+source/front/dist
+*/node_modules
+*/bower_components
