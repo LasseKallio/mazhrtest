@@ -123,6 +123,63 @@ class PaymentController extends BaseController {
 		Auth::logout();
 		return Redirect::to($returnUrl);
 	}
+/*
+	public function creditPayment()
+	{
+		$creditPrices = array(
+			30	=> 120,
+			10	=> 45,
+			5		=> 25,
+			1		=> 5
+		);
+		$creditPackage = Input::get('creditPackage');
+		$token = parseInputToken();
+		$mazhrSession = MazhrSession::get($token);
+
+		$user = User::find($mazhrSession->user_id);
+		$config = Config::get('services.paytrail');
+		$returnUrl = Input::has('return_url') ? urldecode(Input::get('return_url')) : Request::server('HTTP_REFERER');
+		Session::put('payment_return_url', $returnUrl);
+
+		$orderNumber = $user->id . '-credit-' . date('y-m-d-H-i-s');
+		$priceToPay = $creditPrices[$creditPackage];
+
+		if(PaymentLog::canProceed($orderNumber)) {
+
+			$payment = new Paytrail_Module_Rest_Payment_S1($orderNumber, $urlset, $priceToPay);
+			$module = new Paytrail_Module_Rest($config['merchantId'], $config['merchantSecureCode']);
+			$paylog = PaymentLog::newTransaction($orderNumber, 'credit', null, $user->id, $priceToPay);
+			$paylog->status = PaymentLog::PAYMENT_CREATED;
+			$paylog->save();
+
+			try {
+		    $result = $module->processPayment($payment);
+		    $paylog->status = PaymentLog::PAYMENT_STARTED;
+		    $paylog->save();
+		    // Everything ok, let´s go shopping
+		    Auth::logout();
+		    return Redirect::to($result->getUrl());
+			}
+			catch (Paytrail_Exception $pe) {
+      	Log::warning('Unable to start the payment: ' . $pe->getMessage());;
+      	$mazhrSession->setValue('message', 'payment_startfail');
+      }
+			catch (Exception $e) {
+      	Log::warning('Payment logging failure: ' . $e->getMessage());
+      	$mazhrSession->setValue('message', 'payment_logfail');
+      }
+		}
+		else {
+			Log::info('Unfinished payment ('. $user->email .')');
+	    $mazhrSession->setValue('message', 'payment_unfinished');
+		}
+
+
+		Auth::logout();
+		return Redirect::to($returnUrl);
+	}
+
+*/
 
     /**
      * Handle successful payment

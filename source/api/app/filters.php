@@ -13,10 +13,10 @@
 
 App::before(function($request)
 {
-    
+
     $resHeaders = Config::get('app.headers');
-    $reqHeaders = getallheaders(); 
-    
+    $reqHeaders = getallheaders();
+
     foreach($resHeaders as $header)
     {
         if(is_array($header))
@@ -48,7 +48,7 @@ App::before(function($request)
                 }
             }
         }
-    }    
+    }
 });
 
 
@@ -150,7 +150,7 @@ Route::filter('InputAuth', function($route)
             if(!empty($mazhrSession->user_id))
             {
                 $success = true;
-            }  
+            }
         }
     }
 

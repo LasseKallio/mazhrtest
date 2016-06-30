@@ -34,12 +34,13 @@ class GetAds extends Command {
 	 * Execute the console command.
 	 *
 	 * @return mixed
-	 */	
+	 */
 	public function fire()
 	{
 
 		ini_set('memory_limit', '1000M');
 		$fieldsArray = array(
+			"englanti",
 			"ammattikoodi",
 			"kuvausteksti",
 			"ilmoitusnumero",

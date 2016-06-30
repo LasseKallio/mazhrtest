@@ -32,9 +32,9 @@ class TestController extends BaseController {
         // check if user has discounts
         foreach($tests as $instrumentId => $test)
         {
-            
+
             $discountPrice = 0;
-            $resetPrice = 0; 
+            $resetPrice = 0;
 
             $reseted = UserTest::where('status', '=', UserTest::TEST_RESETED)
             ->where('instrument_id', '=', $test->instrument)
@@ -106,7 +106,7 @@ class TestController extends BaseController {
                         $test->$key = $value;
                         $changed[] = $key;
                     }
-                    $test->save();              
+                    $test->save();
             }
         }
         catch (Exception $e)
@@ -116,7 +116,7 @@ class TestController extends BaseController {
         }
 
         $response = MzrRestResponse::get(array(), Test::assocTests(true));
-        return Response::json($response);       
+        return Response::json($response);
     }
     /**
      * Claim discount code
@@ -135,7 +135,7 @@ class TestController extends BaseController {
 
         if ($validator->fails()) {
             return Response::make('Bad request!', '400');
-        }   
+        }
 
         $user = Auth::user();
 
@@ -152,10 +152,10 @@ class TestController extends BaseController {
         {
             Log::warning($e->getMessage() . '/n' . $e->getTraceAsString());
             return Response::make('System error', '500');
-        }       
+        }
     }
     /**
-     * Redirect user to the test 
+     * Redirect user to the test
      *
      * @return redirect
      */
@@ -189,7 +189,7 @@ class TestController extends BaseController {
         if($test->status != UserTest::TEST_PAID) {
             $mazhrSession->setValue('message', 'test_notpaid');
             Log::warning('User ' . $user->id . ' tried to do a test that was not paid ('.$test->id.').');
-            return Redirect::to($returnUrl);            
+            return Redirect::to($returnUrl);
         }
 
         $params = array(
@@ -212,7 +212,7 @@ class TestController extends BaseController {
         {
             $error = (string) $response->error;
             $errorMessage = 'generic_error';
-            if(strpos($error, 'lang non-existent') || strpos($error, 'instr/lang combination does not match')) $errorMessage = 'test_language_not_found'; 
+            if(strpos($error, 'lang non-existent') || strpos($error, 'instr/lang combination does not match')) $errorMessage = 'test_language_not_found';
             $mazhrSession->setValue('message', $errorMessage);
             Log::warning($error);
             return Redirect::to($failUrl);
@@ -301,7 +301,7 @@ class TestController extends BaseController {
                 DB::rollback();
                 Log::warning($e->getMessage());
                 $mazhrSession->setValue('message', 'test_savefail');
-                return Redirect::to($returnUrl);                
+                return Redirect::to($returnUrl);
             }
         }
 
@@ -362,19 +362,19 @@ class TestController extends BaseController {
                     $scoreCall = $client->__call("getScoresXml", array($getScoresXmlParams));
                     $results = simplexml_load_string($scoreCall->getScoresXmlResult->any);
                     $score = $results->result->overall_Perc;
-                    break;  
+                    break;
                 default:
-                    // get xml result 
+                    // get xml result
                     $scoreCall = $client->__call("getScoresXml", array($getScoresXmlParams));
                     $results = simplexml_load_string($scoreCall->getScoresXmlResult->any);
-                    $score = $results->result->performance_Perc;    
+                    $score = $results->result->performance_Perc;
             }
 
             $test->score_url = $scoreUrl;
             $test->score_key = urlencode($data["score"]);
             $test->score = $score;
             $test->save();
-            
+
             $message = $data["instr"] == '102' ? 'test_done_primary' : 'test_done';
             $mazhrSession->setValue('message', $message);
         }
@@ -464,7 +464,7 @@ class TestController extends BaseController {
                 DB::rollback();
                 Log::warning($e->getMessage());
                 $mazhrSession->setValue('message', 'test_savefail');
-                return Response::make('test_savefail', '500');               
+                return Response::make('test_savefail', '500');
             }
         }
 
@@ -525,19 +525,19 @@ class TestController extends BaseController {
                     $scoreCall = $client->__call("getScoresXml", array($getScoresXmlParams));
                     $results = simplexml_load_string($scoreCall->getScoresXmlResult->any);
                     $score = $results->result->overall_Perc;
-                    break;  
+                    break;
                 default:
-                    // get xml result 
+                    // get xml result
                     $scoreCall = $client->__call("getScoresXml", array($getScoresXmlParams));
                     $results = simplexml_load_string($scoreCall->getScoresXmlResult->any);
-                    $score = $results->result->performance_Perc;    
+                    $score = $results->result->performance_Perc;
             }
 
             $test->score_url = $scoreUrl;
             $test->score_key = urlencode($data["score"]);
             $test->score = $score;
             $test->save();
-            
+
             $message = $data["instr"] == '102' ? 'test_done_primary' : 'test_done';
             $mazhrSession->setValue('message', $message);
         }
@@ -573,13 +573,13 @@ class TestController extends BaseController {
                     $this->resetCuteTest($userTestId);
                 }
             }
-            $testData = Test::getNumberOfTests($user->id);           
+            $testData = Test::getNumberOfTests($user->id);
             return Response::json(MzrRestResponse::get($testData, UserTest::activeTests($test->user_id)));
         }
         catch (Exception $e)
         {
             Log::warning('Test reset failed for user ('. $user->id .'). ' . $e->getMessage());
-            return Response::make('Bad request!', '400');       
+            return Response::make('Bad request!', '400');
         }
     }
 
@@ -603,14 +603,14 @@ class TestController extends BaseController {
     /**
      * Reset test
      *
-     * @param integer $userTestId 
+     * @param integer $userTestId
      *
      * @return object $resetCall
      */
     private function resetCuteTest($userTestId)
     {
         $client = new SoapClient("http://www.cut-e.net/maptq/ws/wsmaintenance.asmx?WSDL");
-        $config = Config::get("services.cut-e");        
+        $config = Config::get("services.cut-e");
         $test = UserTest::findOrFail($userTestId);
 
         // If user has completed the test and want's to do it again, they will have to pay
@@ -619,7 +619,7 @@ class TestController extends BaseController {
             $test->status = UserTest::TEST_RESETED;
             $test->save();
         }
-        
+
         // Required parameters: ClientID, ProjectID, InstrumentID, CandidateID, SecureCode
         $params = array(
             "reqobj" => array(
