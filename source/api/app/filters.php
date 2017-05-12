@@ -118,6 +118,16 @@ Route::filter('JWTauth', function()
     }
 });
 
+Route::filter('ApiToken', function()
+{
+    $headers = getallheaders();
+
+    if(!isset($headers['Authorization']) || $headers['Authorization'] != 'deadbeef')
+    {
+      return Response::make('Unauthorized', 401);
+    }
+});
+
 Route::filter('OptionalJWTauth', function()
 {
     // check auth token

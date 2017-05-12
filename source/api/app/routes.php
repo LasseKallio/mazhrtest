@@ -55,6 +55,9 @@ Route::group(array('prefix' => 'api/v1', 'before' => array('session.remove')), f
     Route::get('job/{id}', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getAd'));
     Route::get('job/{id}/profile/{profileId}', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getAd'));
 
+    // All profiles
+    Route::get('profiles', array('before' => 'ApiToken', 'uses' => 'ProfileController@getAllProfiles'));
+
     // Users Matches
     Route::get('match/profiles', array('before' => 'JWTauth', 'uses' => 'ProfileController@getMatchingProfiles'));
     Route::get('jobs/matches/{profileId}', array('before' => 'JWTauth', 'uses' => 'AdController@getAdsByProfile'));
