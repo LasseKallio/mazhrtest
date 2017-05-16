@@ -18,7 +18,7 @@
 |
 */
 
-require '/var/www/mazhr_backend/bootstrap/autoload.php';
+require dirname(__FILE__).'/../bootstrap/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -32,7 +32,7 @@ require '/var/www/mazhr_backend/bootstrap/autoload.php';
 |
 */
 
-$app = require_once '/var/www/mazhr_backend/bootstrap/start.php';
+$app = require_once dirname(__FILE__).'/../bootstrap/start.php';
 
 /*
 |--------------------------------------------------------------------------
