@@ -34,10 +34,10 @@ Route::group(array('prefix' => 'api/v1', 'before' => array('session.remove')), f
 
     // Register user
     Route::post('register', 'UserController@register');
-    
+
     // User data
     Route::get('me', array('before' => 'JWTauth', 'uses' => 'UserController@me'));
-    
+
     // Update user data
     Route::post('me', array('before' => 'JWTauth', 'uses' => 'UserController@updateUser'));
     //Route::post('me/image', array('before' => 'JWTauth', 'uses' => 'UserController@changeImage'));
@@ -50,11 +50,15 @@ Route::group(array('prefix' => 'api/v1', 'before' => array('session.remove')), f
 
     // Ads by user interest
     Route::get('jobs/possibilities', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getPossibilities'));
-    
+
+    // Special access endpoints
+    Route::get('users', array('before' => 'ApiToken', 'uses' => 'UserController@getUsers'));
+    Route::get('profiles', array('before' => 'ApiToken', 'uses' => 'ProfileController@getProfiles'));
+
     // Single ad
     Route::get('job/{id}', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getAd'));
     Route::get('job/{id}/profile/{profileId}', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getAd'));
-    
+
     // Users Matches
     Route::get('match/profiles', array('before' => 'JWTauth', 'uses' => 'ProfileController@getMatchingProfiles'));
     Route::get('jobs/matches/{profileId}', array('before' => 'JWTauth', 'uses' => 'AdController@getAdsByProfile'));
@@ -74,7 +78,7 @@ Route::get('linkedin', 'UserController@linkedin');
 // Redirect user to test
 Route::get('cute/test', array('before' => 'InputAuth', 'uses' => 'TestController@test'));
 
-// Handle test response 
+// Handle test response
 Route::get('cute/result/{testid}/mazhr_token/{mazhr_token}', array('before' => 'InputAuth', 'uses' => 'TestController@testResult'));
 Route::get('test/result/', array('before' => 'InputAuth', 'uses' => 'TestController@ajaxTestResult'));
 // Public profile
@@ -115,14 +119,14 @@ Route::group(array('before' => 'auth.admin', 'prefix' => 'admin'), function()
     Route::post('profile/id/{profileId}/code/{code}', 'ProfileController@addProfessionCode');
     Route::post('profile', 'ProfileController@saveProfile');
 
-    // Tests 
+    // Tests
     Route::get('tests', 'TestController@getTestsWithDiscounts');
     Route::post('test/id/{id}', 'TestController@updateTest');
     Route::post('test/id/{id}/{node}', 'TestController@updateTest');
 
     // Payments
     Route::get('payments', 'PaymentController@paymentLog');
-    Route::get('payments/csv', 'PaymentController@paymentLogCsv');  
+    Route::get('payments/csv', 'PaymentController@paymentLogCsv');
 });
 
 
@@ -156,10 +160,9 @@ Route::group(array('prefix' => 'demoapi/v1/fi_fi'), function()
     Route::post('me', 'ExampleController@createMe');
     Route::get('linkedin/callback/success', 'ExampleController@populateMe');
     Route::get('linkedin', function(){
-        return View::make('examples/linkedin');        
+        return View::make('examples/linkedin');
     });
     Route::get('jobs/{param}', 'ExampleController@getJobs');
     Route::get('jobs', 'ExampleController@getJobs');
     //Route::get('createads', 'ExampleController@copyAds');
 });
-

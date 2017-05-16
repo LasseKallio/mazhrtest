@@ -13,10 +13,10 @@
 
 App::before(function($request)
 {
-    
+
     $resHeaders = Config::get('app.headers');
-    $reqHeaders = getallheaders(); 
-    
+    $reqHeaders = getallheaders();
+
     foreach($resHeaders as $header)
     {
         if(is_array($header))
@@ -48,7 +48,7 @@ App::before(function($request)
                 }
             }
         }
-    }    
+    }
 });
 
 
@@ -87,6 +87,15 @@ Route::filter('auth.admin', function()
 Route::filter('auth.basic', function()
 {
     return Auth::basic();
+});
+
+Route::filter('ApiToken', function()
+{
+    $headers = getallheaders();
+    if(!isset($headers['Authorization']) || $headers['Authorization'] != 'deadbeef')
+    {
+      return Response::make('Unauthorized', 401);
+    }
 });
 
 Route::filter('JWTauth', function()
@@ -150,7 +159,7 @@ Route::filter('InputAuth', function($route)
             if(!empty($mazhrSession->user_id))
             {
                 $success = true;
-            }  
+            }
         }
     }
 
