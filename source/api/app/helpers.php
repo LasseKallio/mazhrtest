@@ -4,7 +4,7 @@
  * Generate uuid
  *
  * @return string
- */
+ */	
 function generateUuid() {
 	return sprintf( '%04x%04x-%04x-%04x-%04x-%04x%04x%04x',
 	// 32 bits for "time_low"
@@ -33,7 +33,7 @@ function generateUuid() {
  * @param array $headers
  *
  * @return string $tmpToken
- */
+ */	
 function getTmpToken() {
 
 	$headers = getallheaders();
@@ -63,7 +63,7 @@ function getTmpToken() {
  * @param array $headers
  *
  * @return string $token
- */
+ */	
 function parseInputToken($inputToken = null) {
 
     $token = null;
@@ -85,7 +85,7 @@ function parseInputToken($inputToken = null) {
  * @param string $delimiter defaut ";"
  *
  * @return string cvs
- */
+ */	
 function toCsv($input, $delimiter = ";")
 {
     $tempMemory = fopen('php://memory', 'w');

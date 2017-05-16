@@ -16,7 +16,7 @@ return array(
 	*/
 
 	//'driver' => 'mandrill',
-	'driver' => 'log',
+	'driver' => 'smtp',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -29,7 +29,8 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.mailgun.org',
+	//'host' => 'smtp.mailgun.org',
+        'host' => 'smtp.sendgrid.net',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -55,7 +56,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => null, 'name' => null),
+	'from' => array('address' => 'support@mazhr.com', 'name' => 'Mazhr Support'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,7 +82,7 @@ return array(
 	|
 	*/
 
-	'username' => null,
+	'username' => 'sami.moilanen@m2talent.fi',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -94,7 +95,7 @@ return array(
 	|
 	*/
 
-	'password' => null,
+	'password' => 'Vittu1234',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -120,6 +121,6 @@ return array(
 	|
 	*/
 
-	'pretend' => true,
+	'pretend' => false,
 
 );

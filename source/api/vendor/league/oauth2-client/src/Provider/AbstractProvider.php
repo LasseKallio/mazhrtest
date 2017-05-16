@@ -44,7 +44,7 @@ abstract class AbstractProvider implements ProviderInterface
 
     /**
      * @var int This represents: PHP_QUERY_RFC1738, which is the default value for php 5.4
-     *          and the default encoding type for the http_build_query setup
+     *          and the default encryption type for the http_build_query setup
      */
     protected $httpBuildEncType = 1;
 
@@ -81,7 +81,7 @@ abstract class AbstractProvider implements ProviderInterface
     abstract public function urlAuthorize();
 
     /**
-     * Get the URL that this provider uses to request an access token.
+     * Get the URL that this provider users to request an access token.
      *
      * @return string
      */
@@ -202,7 +202,19 @@ abstract class AbstractProvider implements ProviderInterface
             // @codeCoverageIgnoreEnd
         }
 
-        $result = $this->prepareResponse($response);
+        switch ($this->responseType) {
+            case 'json':
+                $result = json_decode($response, true);
+
+                if (JSON_ERROR_NONE !== json_last_error()) {
+                    $result = [];
+                }
+
+                break;
+            case 'string':
+                parse_str($response, $result);
+                break;
+        }
 
         if (isset($result['error']) && ! empty($result['error'])) {
             // @codeCoverageIgnoreStart
@@ -213,34 +225,6 @@ abstract class AbstractProvider implements ProviderInterface
         $result = $this->prepareAccessTokenResult($result);
 
         return $grant->handleResponse($result);
-    }
-
-    /**
-     * Prepare the response, parsing according to configuration and returning
-     * the response as an array.
-     *
-     * @param  string $response
-     * @return array
-     */
-    protected function prepareResponse($response)
-    {
-        $result = [];
-
-        switch ($this->responseType) {
-            case 'json':
-                $json = json_decode($response, true);
-
-                if (JSON_ERROR_NONE === json_last_error()) {
-                    $result = $json;
-                }
-
-                break;
-            case 'string':
-                parse_str($response, $result);
-                break;
-        }
-
-        return $result;
     }
 
     /**
@@ -365,9 +349,8 @@ abstract class AbstractProvider implements ProviderInterface
             $response = $request->getBody();
         } catch (BadResponseException $e) {
             // @codeCoverageIgnoreStart
-            $response = $e->getResponse()->getBody();
-            $result = $this->prepareResponse($response);
-            throw new IDPException($result);
+            $raw_response = explode("\n", $e->getResponse());
+            throw new IDPException(end($raw_response));
             // @codeCoverageIgnoreEnd
         }
 

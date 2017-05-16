@@ -35,7 +35,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function education()
     {
         return $this->hasMany('UserEducation')->orderBy(DB::raw('(end_year is null)'), 'desc')->orderBy('end_year', 'desc')->orderBy('end_month', 'desc')->orderBy('start_year', 'desc');
-    }
+    }   
 
     /**
      * User work history relation.
@@ -65,9 +65,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function assocFilters()
     {
         $filters = $this->filters;
-        $response = array();
+        $response = array(); 
         foreach($filters as $filter) {
-            $response[$filter->type] = $filter;
+            $response[$filter->type] = $filter; 
         }
         return $response;
     }
@@ -95,14 +95,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         foreach($skills as $skill)
         {
             if(isset($skill->category))
-            {
+            {   
                 if(!isset($response[$skill->category])) $response[$skill->category] = array();
                 $response[$skill->category][] = $skill;
             }
             else
             {
                 $response[$skill->key] = $skill;
-            }
+            } 
         }
         return $response;
     }
@@ -119,17 +119,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         foreach($extras as $extra)
         {
             if(isset($extra->category))
-            {
+            {   
                 if(!isset($response[$extra->category])) $response[$extra->category] = array();
                 $response[$extra->category][] = $extra;
             }
             else
             {
                 $response[$extra->key] = $extra;
-            }
+            } 
         }
         return $response;
-    }
+    }    
 
     /**
      * Create candidate id for cut-e test
@@ -183,7 +183,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      */
     public function toJArray()
     {
-        $array = $this->toArray();
+        $array = $this->toArray();  
         $linkedinData = json_decode($this->linkedin_data);
         $array["linkedin_data"] = $linkedinData;
         return $array;
@@ -203,7 +203,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $response['skills'] = $this->assocSkills();
         $response['extras'] = $this->assocExtras();
         $response['privacy'] = $this->privacy()->toArray();
-        return $response;
+        return $response; 
     }
 
     /**
@@ -218,5 +218,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         $prefix = date('Ymdhis');
         $image = $prefix . '_' . md5(time() . $prefix . rand(1000, 9999)) . $extension;
         return $image;
-    }
+    }       
 }

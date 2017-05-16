@@ -6,7 +6,6 @@ use League\OAuth2\Client\Entity\User;
 
 class Instagram extends AbstractProvider
 {
-    public $scopeSeparator = ' ';
     public $scopes = ['basic'];
     public $responseType = 'json';
 

@@ -98,7 +98,7 @@ class SQLite3Cache extends CacheProvider
      */
     protected function doContains($id)
     {
-        return null !== $this->findById($id, false);
+        return (boolean) $this->findById($id, false);
     }
 
     /**
@@ -113,7 +113,7 @@ class SQLite3Cache extends CacheProvider
         ));
 
         $statement->bindValue(':id', $id);
-        $statement->bindValue(':data', serialize($data), SQLITE3_BLOB);
+        $statement->bindValue(':data', serialize($data));
         $statement->bindValue(':expire', $lifeTime > 0 ? time() + $lifeTime : null);
 
         return $statement->execute() instanceof SQLite3Result;
@@ -157,7 +157,7 @@ class SQLite3Cache extends CacheProvider
      * Find a single row by ID.
      *
      * @param mixed $id
-     * @param bool $includeData
+     * @param boolean $includeData
      *
      * @return array|null
      */
@@ -179,7 +179,7 @@ class SQLite3Cache extends CacheProvider
 
         $statement->bindValue(':id', $id, SQLITE3_TEXT);
 
-        $item = $statement->execute()->fetchArray(SQLITE3_ASSOC);
+        $item = $statement->execute()->fetchArray();
 
         if ($item === false) {
             return null;
@@ -208,8 +208,7 @@ class SQLite3Cache extends CacheProvider
      * Check if the item is expired.
      *
      * @param array $item
-     *
-     * @return bool
+     * @return boolean
      */
     private function isExpired(array $item)
     {

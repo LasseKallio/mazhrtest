@@ -6,13 +6,12 @@ use Doctrine\Common\Cache\Cache;
 use Doctrine\Common\Cache\SQLite3Cache;
 use SQLite3;
 
-/**
- * @requires extension sqlite3
- */
 class SQLite3Test extends CacheTest
 {
-    private $file;
-    private $sqlite;
+    /**
+     * @var SQLite3
+     */
+    private $file, $sqlite;
 
     protected function setUp()
     {
@@ -23,7 +22,6 @@ class SQLite3Test extends CacheTest
 
     protected function tearDown()
     {
-        $this->sqlite = null;  // DB must be closed before
         unlink($this->file);
     }
 
@@ -32,9 +30,6 @@ class SQLite3Test extends CacheTest
         $this->assertNull($this->_getCacheDriver()->getStats());
     }
 
-    /**
-     * {@inheritDoc}
-     */
     protected function _getCacheDriver()
     {
         return new SQLite3Cache($this->sqlite, 'test_table');

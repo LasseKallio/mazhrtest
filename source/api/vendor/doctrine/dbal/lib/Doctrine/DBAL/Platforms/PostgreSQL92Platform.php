@@ -72,12 +72,4 @@ class PostgreSQL92Platform extends PostgreSQL91Platform
         parent::initializeDoctrineTypeMappings();
         $this->doctrineTypeMapping['json'] = 'json_array';
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function getCloseActiveDatabaseConnectionsSQL($database)
-    {
-        return "SELECT pg_terminate_backend(pid) FROM pg_stat_activity WHERE datname = '$database'";
-    }
 }

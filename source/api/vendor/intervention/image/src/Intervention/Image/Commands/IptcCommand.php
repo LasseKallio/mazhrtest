@@ -33,14 +33,12 @@ class IptcCommand extends AbstractCommand
                 $data['Urgency'] = isset($iptc["2#010"][0]) ? $iptc["2#010"][0] : null;
                 $data['Category'] = isset($iptc["2#015"][0]) ? $iptc["2#015"][0] : null;
                 $data['Subcategories'] = isset($iptc["2#020"][0]) ? $iptc["2#020"][0] : null;
-                $data['Keywords'] = isset($iptc["2#025"][0]) ? $iptc["2#025"] : null;
+                $data['Keywords'] = isset($iptc["2#025"][0]) ? $iptc["2#025"][0] : null;
                 $data['SpecialInstructions'] = isset($iptc["2#040"][0]) ? $iptc["2#040"][0] : null;
                 $data['CreationDate'] = isset($iptc["2#055"][0]) ? $iptc["2#055"][0] : null;
-                $data['CreationTime'] = isset($iptc["2#060"][0]) ? $iptc["2#060"][0] : null;
                 $data['AuthorByline'] = isset($iptc["2#080"][0]) ? $iptc["2#080"][0] : null;
                 $data['AuthorTitle'] = isset($iptc["2#085"][0]) ? $iptc["2#085"][0] : null;
                 $data['City'] = isset($iptc["2#090"][0]) ? $iptc["2#090"][0] : null;
-                $data['SubLocation'] = isset($iptc["2#092"][0]) ? $iptc["2#092"][0] : null;
                 $data['State'] = isset($iptc["2#095"][0]) ? $iptc["2#095"][0] : null;
                 $data['Country'] = isset($iptc["2#101"][0]) ? $iptc["2#101"][0] : null;
                 $data['OTR'] = isset($iptc["2#103"][0]) ? $iptc["2#103"][0] : null;
@@ -49,7 +47,7 @@ class IptcCommand extends AbstractCommand
                 $data['PhotoSource'] = isset($iptc["2#115"][0]) ? $iptc["2#115"][0] : null;
                 $data['Copyright'] = isset($iptc["2#116"][0]) ? $iptc["2#116"][0] : null;
                 $data['Caption'] = isset($iptc["2#120"][0]) ? $iptc["2#120"][0] : null;
-                $data['CaptionWriter'] = isset($iptc["2#122"][0]) ? $iptc["2#122"][0] : null;
+                $data['CaptionWriter'] = isset($iptc["2#120"][0]) ? $iptc["2#122"][0] : null;
             }
         }
 

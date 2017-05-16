@@ -56,21 +56,11 @@ class ImageServiceProviderLaravel4 extends ServiceProvider
                     // define template callback
                     $callback = $config->get("imagecache::templates.{$template}");
 
-                    if (is_callable($callback) || class_exists($callback)) {
+                    if (is_callable($callback)) {
 
                         // image manipulation based on callback
                         $content = $app['image']->cache(function ($image) use ($image_path, $callback) {
-                            
-                            switch (true) {
-                                case is_callable($callback):
-                                    return $callback($image->make($image_path));
-                                    break;
-                                
-                                case class_exists($callback):
-                                    return $image->make($image_path)->filter(new $callback);
-                                    break;
-                            }
-
+                            return $callback($image->make($image_path));
                         }, $config->get('imagecache::lifetime'));
 
                     } else {
@@ -106,7 +96,5 @@ class ImageServiceProviderLaravel4 extends ServiceProvider
         $app['image'] = $app->share(function ($app) {
             return new ImageManager($app['config']->get('image::config'));
         });
-
-        $app->alias('image', 'Intervention\Image\ImageManager');
     }
 }

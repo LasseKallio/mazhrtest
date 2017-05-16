@@ -32,9 +32,9 @@ class PhpFileCache extends FileCache
     /**
      * {@inheritdoc}
      */
-    public function __construct($directory, $extension = self::EXTENSION, $umask = 0002)
+    public function __construct($directory, $extension = self::EXTENSION)
     {
-        parent::__construct($directory, $extension, $umask);
+        parent::__construct($directory, $extension);
     }
 
     /**
@@ -42,11 +42,13 @@ class PhpFileCache extends FileCache
      */
     protected function doFetch($id)
     {
-        $value = $this->includeFileForId($id);
+        $filename = $this->getFilename($id);
 
-        if (! $value) {
+        if ( ! is_file($filename)) {
             return false;
         }
+
+        $value = include $filename;
 
         if ($value['lifetime'] !== 0 && $value['lifetime'] < time()) {
             return false;
@@ -60,11 +62,17 @@ class PhpFileCache extends FileCache
      */
     protected function doContains($id)
     {
-        $value = $this->includeFileForId($id);
+        $filename = $this->getFilename($id);
 
-        if (! $value) {
+        if ( ! is_file($filename)) {
             return false;
         }
+        
+        if ( ! is_readable($filename)) {
+            return false;
+        }
+
+        $value = include $filename;
 
         return $value['lifetime'] === 0 || $value['lifetime'] > time();
     }
@@ -97,24 +105,5 @@ class PhpFileCache extends FileCache
         $code   = sprintf('<?php return %s;', $value);
 
         return $this->writeFile($filename, $code);
-    }
-
-    /**
-     * @param string $id
-     *
-     * @return array|false
-     */
-    private function includeFileForId($id)
-    {
-        $fileName = $this->getFilename($id);
-
-        // note: error suppression is still faster than `file_exists`, `is_file` and `is_readable`
-        $value = @include $fileName;
-
-        if (! isset($value['lifetime'])) {
-            return false;
-        }
-
-        return $value;
     }
 }

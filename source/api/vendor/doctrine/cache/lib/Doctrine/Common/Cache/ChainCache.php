@@ -107,10 +107,10 @@ class ChainCache extends CacheProvider
      */
     protected function doDelete($id)
     {
-        $deleted = true;
+        $deleted = false;
 
         foreach ($this->cacheProviders as $cacheProvider) {
-            $deleted = $cacheProvider->doDelete($id) && $deleted;
+            $deleted = $deleted || $cacheProvider->doDelete($id);
         }
 
         return $deleted;

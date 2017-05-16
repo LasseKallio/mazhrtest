@@ -37,7 +37,7 @@ $env = $app->detectEnvironment(function(){
 	$envName = 'local';
 	$hostName = gethostname();
 	switch($hostName) {
-                case 'mazhr-new':
+                case 'mazhr':
                         $envName = 'production';
                         break;
 		case 'mazhr.com':

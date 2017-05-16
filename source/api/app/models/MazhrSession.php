@@ -15,7 +15,8 @@ class MazhrSession extends Eloquent {
         $user = Auth::user();
         $mazhrSessionQuery = self::where('key', '=', $key)->where('updated_at', '>=', DB::raw('date_sub(NOW(), interval ' . Config::get('auth.tmpTokenLifetime') . ' minute)')); 
         $session = $mazhrSessionQuery->first();
-
+	Log::info($session);
+	
         // Someone is trying to use somebody elses tmp token
         if(isset($user->id) && !empty($session))
         {
