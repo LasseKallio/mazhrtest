@@ -92,7 +92,7 @@ Route::filter('auth.basic', function()
 Route::filter('ApiToken', function()
 {
     $headers = getallheaders();
-    if(!isset($headers['Authorization']) || $headers['Authorization'] != 'deadbeef')
+    if(!isset($headers['Authorization']) || $headers['Authorization'] != 'g2ixEqz80NsaddP2kaiGbHQ9EE2')
     {
       return Response::make('Unauthorized', 401);
     }
