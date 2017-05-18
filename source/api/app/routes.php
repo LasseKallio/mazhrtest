@@ -54,6 +54,7 @@ Route::group(array('prefix' => 'api/v1', 'before' => array('session.remove')), f
     // Special access endpoints
     Route::get('users', array('before' => 'ApiToken', 'uses' => 'UserController@getAllUsers'));
     Route::get('profiles', array('before' => 'ApiToken', 'uses' => 'ProfileController@getProfiles'));
+    Route::get('matches/{profile}', array('before' => 'ApiToken', 'uses' => 'ProfileController@getMatchingProfilesByJob'));
 
     // Single ad
     Route::get('job/{id}', array('before' => 'OptionalJWTauth', 'uses' => 'AdController@getAd'));
