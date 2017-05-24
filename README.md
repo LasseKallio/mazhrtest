@@ -20,7 +20,6 @@
 
   ```
   cd source/api/public
-
   ```
 
 4. Start the actual server:
