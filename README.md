@@ -1,4 +1,4 @@
-# MAZHR
+# MAZHr
 (Slack channel)[https://mazhr.slack.com]
 
 ## Development
