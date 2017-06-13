@@ -22,3 +22,12 @@
   ```
   php -S localhost:8000
   ```
+
+## Testing
+  ```
+  curl -X GET \
+    http://localhost:8000/api/v1/matches/geti_16584 \
+    -H 'authorization: g2ixEqz80NsaddP2kaiGbHQ9EE2' \
+    -H 'cache-control: no-cache'
+  ```
+ 
