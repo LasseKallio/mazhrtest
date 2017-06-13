@@ -2,8 +2,6 @@
 
 namespace Intervention\Image\Imagick;
 
-use \Intervention\Image\Size;
-
 class Driver extends \Intervention\Image\AbstractDriver
 {
     /**
@@ -29,7 +27,7 @@ class Driver extends \Intervention\Image\AbstractDriver
      *
      * @param  integer $width
      * @param  integer $height
-     * @param  string  $background
+     * @param  mixed   $background
      * @return \Intervention\Image\Image
      */
     public function newImage($width, $height, $background = null)
@@ -40,11 +38,11 @@ class Driver extends \Intervention\Image\AbstractDriver
         $core = new \Imagick;
         $core->newImage($width, $height, $background->getPixel(), 'png');
         $core->setType(\Imagick::IMGTYPE_UNDEFINED);
-        $core->setImagetype(\Imagick::IMGTYPE_UNDEFINED);
+        $core->setImageType(\Imagick::IMGTYPE_UNDEFINED);
         $core->setColorspace(\Imagick::COLORSPACE_UNDEFINED);
 
         // build image
-        $image = new \Intervention\Image\Image(new self, $core);
+        $image = new \Intervention\Image\Image(new static, $core);
 
         return $image;
     }

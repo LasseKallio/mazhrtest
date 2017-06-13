@@ -318,7 +318,7 @@ class PostgreSqlPlatform extends AbstractPlatform
     public function getListTableConstraintsSQL($table)
     {
         $table = new Identifier($table);
-        $table = $table->getName();
+        $table = $this->quoteStringLiteral($table->getName());
 
         return "SELECT
                     quote_ident(relname) as relname
@@ -327,7 +327,7 @@ class PostgreSqlPlatform extends AbstractPlatform
                 WHERE oid IN (
                     SELECT indexrelid
                     FROM pg_index, pg_class
-                    WHERE pg_class.relname = '$table'
+                    WHERE pg_class.relname = $table
                         AND pg_class.oid = pg_index.indrelid
                         AND (indisunique = 't' OR indisprimary = 't')
                         )";
@@ -364,13 +364,14 @@ class PostgreSqlPlatform extends AbstractPlatform
         $whereClause = $namespaceAlias.".nspname NOT IN ('pg_catalog', 'information_schema', 'pg_toast') AND ";
         if (strpos($table, ".") !== false) {
             list($schema, $table) = explode(".", $table);
-            $schema = "'" . $schema . "'";
+            $schema = $this->quoteStringLiteral($schema);
         } else {
             $schema = "ANY(string_to_array((select replace(replace(setting,'\"\$user\"',user),' ','') from pg_catalog.pg_settings where name = 'search_path'),','))";
         }
 
         $table = new Identifier($table);
-        $whereClause .= "$classAlias.relname = '" . $table->getName() . "' AND $namespaceAlias.nspname = $schema";
+        $table = $this->quoteStringLiteral($table->getName());
+        $whereClause .= "$classAlias.relname = " . $table . " AND $namespaceAlias.nspname = $schema";
 
         return $whereClause;
     }
@@ -418,6 +419,36 @@ class PostgreSqlPlatform extends AbstractPlatform
     public function getCreateDatabaseSQL($name)
     {
         return 'CREATE DATABASE ' . $name;
+    }
+
+    /**
+     * Returns the SQL statement for disallowing new connections on the given database.
+     *
+     * This is useful to force DROP DATABASE operations which could fail because of active connections.
+     *
+     * @param string $database The name of the database to disallow new connections for.
+     *
+     * @return string
+     */
+    public function getDisallowDatabaseConnectionsSQL($database)
+    {
+        return "UPDATE pg_database SET datallowconn = 'false' WHERE datname = '$database'";
+    }
+
+    /**
+     * Returns the SQL statement for closing currently active connections on the given database.
+     *
+     * This is useful to force DROP DATABASE operations which could fail because of active connections.
+     *
+     * @param string $database The name of the database to close currently active connections for.
+     *
+     * @return string
+     */
+    public function getCloseActiveDatabaseConnectionsSQL($database)
+    {
+        $database = $this->quoteStringLiteral($database);
+
+        return "SELECT pg_terminate_backend(procpid) FROM pg_stat_activity WHERE datname = $database";
     }
 
     /**
@@ -1040,7 +1071,14 @@ class PostgreSqlPlatform extends AbstractPlatform
      */
     public function getTruncateTableSQL($tableName, $cascade = false)
     {
-        return 'TRUNCATE '.$tableName.' '.(($cascade)?'CASCADE':'');
+        $tableIdentifier = new Identifier($tableName);
+        $sql = 'TRUNCATE ' . $tableIdentifier->getQuotedName($this);
+
+        if ($cascade) {
+            $sql .= ' CASCADE';
+        }
+
+        return $sql;
     }
 
     /**
@@ -1136,5 +1174,15 @@ class PostgreSqlPlatform extends AbstractPlatform
     public function getBlobTypeDeclarationSQL(array $field)
     {
         return 'BYTEA';
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function quoteStringLiteral($str)
+    {
+        $str = str_replace('\\', '\\\\', $str); // PostgreSQL requires backslashes to be escaped aswell.
+
+        return parent::quoteStringLiteral($str);
     }
 }

@@ -45,7 +45,7 @@ class SqlitePlatform extends AbstractPlatform
      */
     public function getRegexpExpression()
     {
-        return 'RLIKE';
+        return 'REGEXP';
     }
 
     /**
@@ -405,8 +405,9 @@ class SqlitePlatform extends AbstractPlatform
     public function getListTableConstraintsSQL($table)
     {
         $table = str_replace('.', '__', $table);
+        $table = $this->quoteStringLiteral($table);
 
-        return "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name = '$table' AND sql NOT NULL ORDER BY name";
+        return "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name = $table AND sql NOT NULL ORDER BY name";
     }
 
     /**
@@ -415,8 +416,9 @@ class SqlitePlatform extends AbstractPlatform
     public function getListTableColumnsSQL($table, $currentDatabase = null)
     {
         $table = str_replace('.', '__', $table);
+        $table = $this->quoteStringLiteral($table);
 
-        return "PRAGMA table_info('$table')";
+        return "PRAGMA table_info($table)";
     }
 
     /**
@@ -425,8 +427,9 @@ class SqlitePlatform extends AbstractPlatform
     public function getListTableIndexesSQL($table, $currentDatabase = null)
     {
         $table = str_replace('.', '__', $table);
+        $table = $this->quoteStringLiteral($table);
 
-        return "PRAGMA index_list('$table')";
+        return "PRAGMA index_list($table)";
     }
 
     /**
@@ -505,7 +508,8 @@ class SqlitePlatform extends AbstractPlatform
      */
     public function getTruncateTableSQL($tableName, $cascade = false)
     {
-        $tableName = str_replace('.', '__', $tableName);
+        $tableIdentifier = new Identifier($tableName);
+        $tableName = str_replace('.', '__', $tableIdentifier->getQuotedName($this));
 
         return 'DELETE FROM ' . $tableName;
     }
@@ -660,6 +664,18 @@ class SqlitePlatform extends AbstractPlatform
     /**
      * {@inheritDoc}
      */
+    protected function doModifyLimitQuery($query, $limit, $offset)
+    {
+        if (null === $limit && null !== $offset) {
+            return $query . ' LIMIT -1 OFFSET ' . $offset;
+        }
+
+        return parent::doModifyLimitQuery($query, $limit, $offset);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function getBlobTypeDeclarationSQL(array $field)
     {
         return 'BLOB';
@@ -745,8 +761,9 @@ class SqlitePlatform extends AbstractPlatform
     public function getListTableForeignKeysSQL($table, $database = null)
     {
         $table = str_replace('.', '__', $table);
+        $table = $this->quoteStringLiteral($table);
 
-        return "PRAGMA foreign_key_list('$table')";
+        return "PRAGMA foreign_key_list($table)";
     }
 
     /**

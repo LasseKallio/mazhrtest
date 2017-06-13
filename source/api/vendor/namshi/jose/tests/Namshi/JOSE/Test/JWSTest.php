@@ -25,7 +25,7 @@ class JWSTest extends TestCase
     /**
      * @expectedException InvalidArgumentException
      */
-    public function testLoadingUnsecureJws()
+    public function testLoadingUnsecureJwsWithNoneAlgo()
     {
         $date       = new DateTime('tomorrow');
         $data       = array(
@@ -33,6 +33,27 @@ class JWSTest extends TestCase
             'exp'   => $date->format('U')
         );
         $this->jws  = new JWS('None');
+        $this->jws->setPayload($data);
+        $this->jws->sign('111');
+
+        $jws        = JWS::load($this->jws->getTokenString());
+        $this->assertFalse($jws->verify('111'));
+
+        $payload = $jws->getPayload();
+        $this->assertEquals('b', $payload['a']);
+    }
+    
+    /**
+     * @expectedException InvalidArgumentException
+     */
+    public function testLoadingUnsecureJwsWithLowercaseNone()
+    {
+        $date       = new DateTime('tomorrow');
+        $data       = array(
+            'a'     => 'b',
+            'exp'   => $date->format('U')
+        );
+        $this->jws  = new JWS(array('alg' => 'none'));
         $this->jws->setPayload($data);
         $this->jws->sign('111');
 
@@ -60,7 +81,7 @@ class JWSTest extends TestCase
         $payload = $jws->getPayload();
         $this->assertEquals('b', $payload['a']);
     }
-    
+
     public function testRestrictingTheAlgorithmsKo()
     {
         $this->jws  = new JWS('HS256');
@@ -70,7 +91,7 @@ class JWSTest extends TestCase
         $this->assertFalse($jws->verify('12345', 'RS256'));
         $this->assertFalse($jws->isValid('12345', 'RS256'));
     }
-    
+
     public function testRestrictingTheAlgorithmsOk()
     {
         $date       = new DateTime('tomorrow');
@@ -201,6 +222,23 @@ class JWSTest extends TestCase
 
         $this->assertFalse($jws->verify($public_key));
 
+    }
+
+    public function testLoadingWithAnyOrderOfHeaders()
+    {
+        $privateKey = openssl_pkey_get_private(SSL_KEYS_PATH . "private.key", self::SSL_KEY_PASSPHRASE);
+        $public_key = openssl_pkey_get_public(SSL_KEYS_PATH . "public.key");
+
+        $header = $this->jws->getHeader();
+        $reversedHeader = array_reverse($header);
+        $this->assertFalse($header === $reversedHeader);
+
+        $this->jws->setHeader($reversedHeader);
+        $this->jws->sign($privateKey);
+
+        $tokenString = $this->jws->getTokenString();
+        $jws = JWS::load($tokenString);
+        $this->assertTrue($reversedHeader === $jws->getHeader());
     }
 
 }

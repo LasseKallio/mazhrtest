@@ -1,19 +1,16 @@
-## v1.2.1 (2015-01-28)
+## v1.1.31 (2015-12-15)
 
-- fix double declaration in mbstring shim
+- fix compat with symfony-polyfill
 
-## v1.2.0 (2015-01-12)
+## v1.1.30 (2015-06-29)
 
-- add u::strwidth() to get the width of a string when printed on a terminal
-- add more mbstring shims
-- add a note about https://bugs.php.net/65358
-- fail properly when COM is not loaded
-- fallback on stat() when lstat() fails
+- fix mb_strrpos shim with negative offset
 
-## v1.2.0-beta (2014-08-05)
+## v1.1.29 (2015-04-26)
 
-- add best-fit mappings for UTF-8 to Code Page approximations
-- add portable Unicode filesystem access under Windows and other OSes
+- fix ucwords to be functionally the same as in-built PHP version
+- fix iconv_set_encoding deprecation notice in PHP 5.6.0
+- remove legacy test for HHVM/PHP7
 
 ## v1.1.28 (2015-01-12)
 
