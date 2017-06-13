@@ -1,10 +1,6 @@
 # MAZHR
-(Slack channel)[https://mazhr.slack.com]
 
 ## Development
-
-### Resources
-- (GIT reporistory)[https://git.corp.solinor.com/projects/MAZHR/repos/mazhr/browse]
 
 ## Set up local environment
 
