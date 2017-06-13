@@ -23,23 +23,3 @@
   php -S localhost:8000
   ```
 
-
-
-# - OUTDATED DOCS -
-
-### Pre-requirements
-- Ansible
-- Vagrant (2.0+)
-- VirtualBox
-
-### Starting
-```
-# Clone repository
-git clone ssh://git@git.corp.solinor.com/mazhr/mazhr.git
-# or
-git clone https://first.last@git.corp.solinor.com/scm/mazhr/mazhr.git
-
-cd mazhr
-vagrant up
-vagrant ssh
-```
