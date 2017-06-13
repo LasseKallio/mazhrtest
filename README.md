@@ -9,16 +9,15 @@
 1. Install required PHP packages:
 
   ```
-  sudo apt-get install php php-common php-mysql php-mcrypt
-  ```
-2. Configure your password and username in `source/api/app/config/local/database.php`, in the `mysql` section.
-3. Go to `public` directory with:
-
-  ```
-  cd source/api/public
+  sudo apt-get install php php-common php-mysql php-mcrypt php-curl
   ```
 
-4. Start the actual server:
+2. Install composer https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
+4. Go to `source/api` directory
+3. Run `composer install` to install PHP dependencies
+4. Configure your password and username in `source/api/app/config/local/database.php`, in the `mysql` section.
+5. Go to `source/api/public`
+6. Start the actual server:
 
   ```
   php -S localhost:8000

@@ -1,66 +1,5 @@
 [
     {
-        "name": "symfony/event-dispatcher",
-        "version": "v2.6.6",
-        "version_normalized": "2.6.6.0",
-        "target-dir": "Symfony/Component/EventDispatcher",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/EventDispatcher.git",
-            "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/70f7c8478739ad21e3deef0d977b38c77f1fb284",
-            "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "psr/log": "~1.0",
-            "symfony/config": "~2.0,>=2.0.5",
-            "symfony/dependency-injection": "~2.6",
-            "symfony/expression-language": "~2.6",
-            "symfony/phpunit-bridge": "~2.7",
-            "symfony/stopwatch": "~2.3"
-        },
-        "suggest": {
-            "symfony/dependency-injection": "",
-            "symfony/http-kernel": ""
-        },
-        "time": "2015-03-13 17:37:22",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\EventDispatcher\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony EventDispatcher Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "symfony/translation",
         "version": "v2.5.11",
         "version_normalized": "2.5.11.0",
@@ -88,7 +27,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2015-01-03 15:23:51",
+        "time": "2015-01-03T15:23:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -136,7 +75,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2014-09-09 13:34:57",
+        "time": "2014-09-09T13:34:57+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -197,7 +136,7 @@
             "doctrine/cache": "1.*",
             "phpunit/phpunit": "4.*"
         },
-        "time": "2014-12-20 20:49:38",
+        "time": "2014-12-20T20:49:38+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -262,7 +201,7 @@
         "require": {
             "php": ">=5.3.2"
         },
-        "time": "2014-02-03 23:07:43",
+        "time": "2014-02-03T23:07:43+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -340,7 +279,7 @@
             "predis/predis": "~0.8",
             "satooshi/php-coveralls": "~0.6"
         },
-        "time": "2015-01-15 20:38:55",
+        "time": "2015-01-15T20:38:55+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -407,7 +346,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2014-12-20 21:24:13",
+        "time": "2014-12-20T21:24:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -481,7 +420,7 @@
         "require-dev": {
             "phpunit/phpunit": "~3.7"
         },
-        "time": "2015-04-02 19:55:44",
+        "time": "2015-04-02T19:55:44+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -549,7 +488,7 @@
             "ext-tokenizer": "*",
             "php": ">=5.2"
         },
-        "time": "2014-07-23 18:24:17",
+        "time": "2014-07-23T18:24:17+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -596,7 +535,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-01-03 08:01:13",
+        "time": "2015-01-03T08:01:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -627,58 +566,6 @@
         "homepage": "http://symfony.com"
     },
     {
-        "name": "symfony/filesystem",
-        "version": "v2.6.6",
-        "version_normalized": "2.6.6.0",
-        "target-dir": "Symfony/Component/Filesystem",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/Filesystem.git",
-            "reference": "4983964b3693e4f13449cb3800c64a9112c301b4"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4983964b3693e4f13449cb3800c64a9112c301b4",
-            "reference": "4983964b3693e4f13449cb3800c64a9112c301b4",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "require-dev": {
-            "symfony/phpunit-bridge": "~2.7"
-        },
-        "time": "2015-03-22 16:55:57",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.6-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Symfony\\Component\\Filesystem\\": ""
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Symfony Community",
-                "homepage": "http://symfony.com/contributors"
-            },
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            }
-        ],
-        "description": "Symfony Filesystem Component",
-        "homepage": "http://symfony.com"
-    },
-    {
         "name": "symfony/console",
         "version": "v2.5.11",
         "version_normalized": "2.5.11.0",
@@ -705,7 +592,7 @@
             "psr/log": "For using the console logger",
             "symfony/event-dispatcher": ""
         },
-        "time": "2015-02-08 07:07:45",
+        "time": "2015-02-08T07:07:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -757,7 +644,7 @@
             "symfony/filesystem": "~2.1",
             "symfony/finder": "~2.1"
         },
-        "time": "2014-03-12 00:05:31",
+        "time": "2014-03-12T00:05:31+00:00",
         "bin": [
             "classpreloader.php"
         ],
@@ -805,7 +692,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2014-08-17 21:15:53",
+        "time": "2014-08-17T21:15:53+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -867,7 +754,7 @@
         "suggest": {
             "ext-curl": "Guzzle will use specific adapters if cURL is present"
         },
-        "time": "2014-10-05 19:29:14",
+        "time": "2014-10-05T19:29:14+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -932,7 +819,7 @@
         "suggest": {
             "symfony/console": "For helpful console commands such as SQL execution and import of files."
         },
-        "time": "2015-01-12 21:52:47",
+        "time": "2015-01-12T21:52:47+00:00",
         "bin": [
             "bin/doctrine-dbal"
         ],
@@ -1000,7 +887,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0"
         },
-        "time": "2015-03-08 14:05:44",
+        "time": "2015-03-08T14:05:44+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1056,7 +943,7 @@
             "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
             "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP < 4.3.3."
         },
-        "time": "2015-01-28 21:50:33",
+        "time": "2015-01-28T21:50:33+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1162,7 +1049,7 @@
             "symfony/http-foundation": "",
             "symfony/validator": "For using the user password constraint"
         },
-        "time": "2015-01-25 04:37:39",
+        "time": "2015-01-25T04:37:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1226,7 +1113,7 @@
             "symfony/expression-language": "For using expression matching",
             "symfony/yaml": "For using the YAML loader"
         },
-        "time": "2015-02-08 07:07:45",
+        "time": "2015-02-08T07:07:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1281,7 +1168,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-02-08 07:07:45",
+        "time": "2015-02-08T07:07:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1326,7 +1213,7 @@
             "reference": "fe0936ee26643249e916849d48e3a51d5f5e278b",
             "shasum": ""
         },
-        "time": "2012-12-21 11:40:51",
+        "time": "2012-12-21T11:40:51+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1382,7 +1269,7 @@
             "symfony/http-foundation": "",
             "symfony/http-kernel": ""
         },
-        "time": "2015-01-16 14:51:58",
+        "time": "2015-01-16T14:51:58+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1434,7 +1321,7 @@
         "require-dev": {
             "symfony/expression-language": "~2.4"
         },
-        "time": "2015-04-01 15:49:36",
+        "time": "2015-04-01T15:49:36+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1513,7 +1400,7 @@
             "symfony/dependency-injection": "",
             "symfony/finder": ""
         },
-        "time": "2015-04-01 16:01:45",
+        "time": "2015-04-01T16:01:45+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1568,7 +1455,7 @@
         "suggest": {
             "symfony/css-selector": ""
         },
-        "time": "2015-01-03 08:01:13",
+        "time": "2015-01-03T08:01:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1617,7 +1504,7 @@
         "require": {
             "php": ">=5.3.3"
         },
-        "time": "2015-01-03 08:01:13",
+        "time": "2015-01-03T08:01:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1678,7 +1565,7 @@
         "suggest": {
             "symfony/process": ""
         },
-        "time": "2015-01-03 08:01:13",
+        "time": "2015-01-03T08:01:13+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1729,7 +1616,7 @@
         "require-dev": {
             "mockery/mockery": "~0.9.1"
         },
-        "time": "2015-03-14 06:06:39",
+        "time": "2015-03-14T06:06:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1785,7 +1672,7 @@
         "require-dev": {
             "silex/silex": "~1.0"
         },
-        "time": "2014-11-23 20:37:11",
+        "time": "2014-11-23T20:37:11+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1838,7 +1725,7 @@
             "ext-curl": "Allows access to Webdis when paired with phpiredis",
             "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
         },
-        "time": "2014-08-01 09:43:10",
+        "time": "2014-08-01T09:43:10+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -1908,7 +1795,7 @@
             "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
             "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
         },
-        "time": "2015-03-09 09:58:04",
+        "time": "2015-03-09T09:58:04+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -1962,7 +1849,7 @@
         "require-dev": {
             "phpunit/phpunit": "~3.7"
         },
-        "time": "2015-01-10 01:09:28",
+        "time": "2015-01-10T01:09:28+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2011,7 +1898,7 @@
         "require-dev": {
             "mockery/mockery": "0.9.*"
         },
-        "time": "2015-03-30 15:26:59",
+        "time": "2015-03-30T15:26:59+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2068,7 +1955,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2014-11-20 16:49:30",
+        "time": "2014-11-20T16:49:30+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2115,7 +2002,7 @@
             "ext-readline": "*",
             "php": ">=5.3.0"
         },
-        "time": "2015-03-01 08:05:19",
+        "time": "2015-03-01T08:05:19+00:00",
         "bin": [
             "bin/boris"
         ],
@@ -2157,7 +2044,7 @@
             "ext-mbstring": "Use Mbstring for best performance",
             "ext-wfio": "Use WFIO for UTF-8 filesystem access on Windows"
         },
-        "time": "2015-01-29 08:36:50",
+        "time": "2015-01-29T08:36:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2273,7 +2160,7 @@
         "suggest": {
             "doctrine/dbal": "Allow renaming columns and dropping SQLite columns."
         },
-        "time": "2015-02-11 20:37:15",
+        "time": "2015-02-11T20:37:15+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2336,7 +2223,7 @@
             "ext-imagick": "to use Imagick based image processing.",
             "intervention/imagecache": "Caching extension for the Intervention Image library"
         },
-        "time": "2015-03-18 17:41:04",
+        "time": "2015-03-18T17:41:04+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2422,7 +2309,7 @@
         "suggest": {
             "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
         },
-        "time": "2015-03-18 18:23:50",
+        "time": "2015-03-18T18:23:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2489,7 +2376,7 @@
             "satooshi/php-coveralls": "0.6.*",
             "squizlabs/php_codesniffer": "~2.0"
         },
-        "time": "2015-04-02 15:09:47",
+        "time": "2015-04-02T15:09:47+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2550,7 +2437,7 @@
             "phpunit/phpunit": "~4.5",
             "satooshi/php-coveralls": "dev-master"
         },
-        "time": "2015-03-10 08:41:53",
+        "time": "2015-03-10T08:41:53+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -2607,7 +2494,7 @@
             "mockery/mockery": "0.9.*",
             "phpunit/phpunit": "4.*"
         },
-        "time": "2015-04-07 20:06:51",
+        "time": "2015-04-07T20:06:51+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -2643,5 +2530,118 @@
             "laravel",
             "tymon"
         ]
+    },
+    {
+        "name": "symfony/event-dispatcher",
+        "version": "v2.6.6",
+        "version_normalized": "2.6.6.0",
+        "target-dir": "Symfony/Component/EventDispatcher",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/EventDispatcher.git",
+            "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/70f7c8478739ad21e3deef0d977b38c77f1fb284",
+            "reference": "70f7c8478739ad21e3deef0d977b38c77f1fb284",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "psr/log": "~1.0",
+            "symfony/config": "~2.0,>=2.0.5",
+            "symfony/dependency-injection": "~2.6",
+            "symfony/expression-language": "~2.6",
+            "symfony/phpunit-bridge": "~2.7",
+            "symfony/stopwatch": "~2.3"
+        },
+        "suggest": {
+            "symfony/dependency-injection": "",
+            "symfony/http-kernel": ""
+        },
+        "time": "2015-03-13T17:37:22+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\EventDispatcher\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony EventDispatcher Component",
+        "homepage": "http://symfony.com"
+    },
+    {
+        "name": "symfony/filesystem",
+        "version": "v2.6.6",
+        "version_normalized": "2.6.6.0",
+        "target-dir": "Symfony/Component/Filesystem",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/Filesystem.git",
+            "reference": "4983964b3693e4f13449cb3800c64a9112c301b4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/Filesystem/zipball/4983964b3693e4f13449cb3800c64a9112c301b4",
+            "reference": "4983964b3693e4f13449cb3800c64a9112c301b4",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "~2.7"
+        },
+        "time": "2015-03-22T16:55:57+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.6-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Symfony\\Component\\Filesystem\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Symfony Community",
+                "homepage": "http://symfony.com/contributors"
+            },
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Symfony Filesystem Component",
+        "homepage": "http://symfony.com"
     }
 ]
