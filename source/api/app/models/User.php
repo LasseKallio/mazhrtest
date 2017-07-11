@@ -196,9 +196,9 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function getFullProfileAsArray()
     {
         $response = $this->toJArray();
-        $response['competence_points'] = json_decode($this->competence_points) ?: [];
-        $response['behaviour_points'] = json_decode($this->behaviour_points) ?: [];
-        $response['motivation_points'] = json_decode($this->motivation_points) ?: [];
+        $response['competence_points'] = is_null($this->competence_points) ? [] : json_decode($this->competence_points);
+        $response['behaviour_points'] = is_null($this->behaviour_points) ? [] : json_decode($this->behaviour_points);
+        $response['motivation_points'] = is_null($this->motivation_points) ? [] : json_decode($this->motivation_points);
         $response['workhistory'] = $this->workHistory;
         $response['education'] = $this->education;
         $response['tests'] = UserTest::activeTests($this->id);
