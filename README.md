@@ -9,7 +9,7 @@
 1. Install required PHP packages:
 
   ```
-  sudo apt-get install php php-common php-mysql php-mcrypt php-curl
+  sudo apt-get install php php-common php-mysql php-mcrypt php-curl php-soap php-xml
   ```
 
 2. Install composer https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx
@@ -30,4 +30,3 @@
     -H 'authorization: g2ixEqz80NsaddP2kaiGbHQ9EE2' \
     -H 'cache-control: no-cache'
   ```
- 

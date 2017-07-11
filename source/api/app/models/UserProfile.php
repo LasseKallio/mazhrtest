@@ -2,7 +2,6 @@
 class UserProfile extends Eloquent {
 
     protected $table = 'user_profiles';
-
   /**
    * Matching user profiles
    *

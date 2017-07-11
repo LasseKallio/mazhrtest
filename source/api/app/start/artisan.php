@@ -13,3 +13,4 @@
 
 Artisan::add(new GetAds);
 Artisan::add(new ScoreUpdate);
+Artisan::add(new PointsUpdate);
