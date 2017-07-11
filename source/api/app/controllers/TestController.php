@@ -181,20 +181,16 @@ class TestController extends BaseController {
             $test->save();
         }
         catch (Exception $e) {
-            echo "asdasd;";
             $mazhrSession->setValue('message', 'test_notfound');
             Log::warning($e->getMessage());
-            //return Redirect::to($returnUrl);
-            exit;
+            return Redirect::to($returnUrl);
         }
 
         // test is not paid
         if($test->status != UserTest::TEST_PAID) {
             $mazhrSession->setValue('message', 'test_notpaid');
             Log::warning('User ' . $user->id . ' tried to do a test that was not paid ('.$test->id.').');
-            //return Redirect::to($returnUrl);
-            echo "not paid";
-            exit;
+            return Redirect::to($returnUrl);
         }
 
         $params = array(
@@ -220,9 +216,7 @@ class TestController extends BaseController {
             if(strpos($error, 'lang non-existent') || strpos($error, 'instr/lang combination does not match')) $errorMessage = 'test_language_not_found';
             $mazhrSession->setValue('message', $errorMessage);
             Log::warning($error);
-            echo $error;
-            exit;
-            //return Redirect::to($failUrl);
+            return Redirect::to($failUrl);
         }
         $surveyUrl = (string) $response->result;
         return Redirect::to($surveyUrl);
